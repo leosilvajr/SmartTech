@@ -1,5 +1,8 @@
 using static System.Net.WebRequestMethods;
 using System.Net.Http;
+using System.Collections.Specialized;
+using SmartTech_Funcoes;
+using SmartTech.Formularios.Configuracoes;
 
 namespace SmartTech
 {
@@ -17,6 +20,8 @@ namespace SmartTech
         private Point dragCursorPoint;
         private Point dragFormPoint;
 
+        //Variavel que adiciona Sombra no Form
+        private const int CS_DROPSHADOW = 0x00020000;
         public frmPrincipal()
         {
             InitializeComponent();
@@ -26,51 +31,19 @@ namespace SmartTech
             pnlSuperior.MouseDown += new MouseEventHandler(pnlSuperior_MouseDown);
             pnlSuperior.MouseMove += new MouseEventHandler(pnlSuperior_MouseMove);
             pnlSuperior.MouseUp += new MouseEventHandler(pnlSuperior_MouseUp);
-
+            this.WindowState = FormWindowState.Normal;
 
 
         }
 
-        //Função que deixa o formulario Redimensionavel.
-        protected override void WndProc(ref Message m)
+        //Propriedade que Adiciona Sombra no Formulario
+        protected override CreateParams CreateParams
         {
-            base.WndProc(ref m);
-
-            const int RESIZE_HANDLE_SIZE = 10;
-
-            if (m.Msg == 0x84) // WM_NCHITTEST
+            get
             {
-                int x = (int)(m.LParam.ToInt64() & 0xFFFF);
-                int y = (int)((m.LParam.ToInt64() & 0xFFFF0000) >> 16);
-                Point cursorPoint = PointToClient(new Point(x, y));
-
-                if (cursorPoint.Y <= RESIZE_HANDLE_SIZE)
-                {
-                    if (cursorPoint.X <= RESIZE_HANDLE_SIZE)
-                        m.Result = (IntPtr)13; // TopLeft
-                    else if (cursorPoint.X < Width - RESIZE_HANDLE_SIZE)
-                        m.Result = (IntPtr)12; // Top
-                    else
-                        m.Result = (IntPtr)14; // TopRight
-                }
-                else if (cursorPoint.Y <= Height - RESIZE_HANDLE_SIZE)
-                {
-                    if (cursorPoint.X <= RESIZE_HANDLE_SIZE)
-                        m.Result = (IntPtr)10; // Left
-                    else if (cursorPoint.X < Width - RESIZE_HANDLE_SIZE)
-                        m.Result = (IntPtr)2; // Caption
-                    else
-                        m.Result = (IntPtr)11; // Right
-                }
-                else
-                {
-                    if (cursorPoint.X <= RESIZE_HANDLE_SIZE)
-                        m.Result = (IntPtr)16; // BottomLeft
-                    else if (cursorPoint.X < Width - RESIZE_HANDLE_SIZE)
-                        m.Result = (IntPtr)15; // Bottom
-                    else
-                        m.Result = (IntPtr)17; // BottomRight
-                }
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
             }
         }
 
@@ -187,14 +160,29 @@ namespace SmartTech
             Application.Exit();
         }
 
+        //Comando correto para maximizar e Minimizar o meu Formulario;
         private void btnMaximize_Click(object sender, EventArgs e)
         {
-            this.WindowState = this.WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
+            if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                MaximumSize = Screen.FromHandle(Handle).WorkingArea.Size;
+                WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnBancoDados_Click(object sender, EventArgs e)
+        {
+            frmBancoDados banco = new frmBancoDados();
+            Util.AbreForm(pnlBase, banco);
         }
     }
 }

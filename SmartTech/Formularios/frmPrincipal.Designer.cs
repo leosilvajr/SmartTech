@@ -32,7 +32,7 @@
             btnSair = new Button();
             panelConfiguracoes = new Panel();
             button9 = new Button();
-            button10 = new Button();
+            btnBancoDados = new Button();
             btnConfiguracoes = new Button();
             panelUltilitarios = new Panel();
             button3 = new Button();
@@ -64,6 +64,7 @@
             btnMinimize = new Button();
             btnMaximize = new Button();
             btnEncerrar = new Button();
+            pnlBase = new Panel();
             panel1.SuspendLayout();
             panelConfiguracoes.SuspendLayout();
             panelUltilitarios.SuspendLayout();
@@ -122,7 +123,7 @@
             // 
             panelConfiguracoes.BackColor = Color.Transparent;
             panelConfiguracoes.Controls.Add(button9);
-            panelConfiguracoes.Controls.Add(button10);
+            panelConfiguracoes.Controls.Add(btnBancoDados);
             panelConfiguracoes.Dock = DockStyle.Top;
             panelConfiguracoes.Location = new Point(0, 665);
             panelConfiguracoes.Name = "panelConfiguracoes";
@@ -147,23 +148,24 @@
             button9.TextAlign = ContentAlignment.MiddleLeft;
             button9.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnBancoDados
             // 
-            button10.Dock = DockStyle.Top;
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
-            button10.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.ForeColor = Color.White;
-            button10.Image = Properties.Resources.degree;
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(0, 0);
-            button10.Name = "button10";
-            button10.Size = new Size(250, 32);
-            button10.TabIndex = 13;
-            button10.Text = "            Produto";
-            button10.TextAlign = ContentAlignment.MiddleLeft;
-            button10.UseVisualStyleBackColor = true;
+            btnBancoDados.Dock = DockStyle.Top;
+            btnBancoDados.FlatAppearance.BorderSize = 0;
+            btnBancoDados.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
+            btnBancoDados.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
+            btnBancoDados.FlatStyle = FlatStyle.Flat;
+            btnBancoDados.ForeColor = Color.White;
+            btnBancoDados.Image = Properties.Resources.degree;
+            btnBancoDados.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBancoDados.Location = new Point(0, 0);
+            btnBancoDados.Name = "btnBancoDados";
+            btnBancoDados.Size = new Size(250, 32);
+            btnBancoDados.TabIndex = 13;
+            btnBancoDados.Text = "            Banco de Dados";
+            btnBancoDados.TextAlign = ContentAlignment.MiddleLeft;
+            btnBancoDados.UseVisualStyleBackColor = true;
+            btnBancoDados.Click += btnBancoDados_Click;
             // 
             // btnConfiguracoes
             // 
@@ -635,11 +637,20 @@
             btnEncerrar.UseVisualStyleBackColor = true;
             btnEncerrar.Click += btnEncerrar_Click;
             // 
+            // pnlBase
+            // 
+            pnlBase.Dock = DockStyle.Fill;
+            pnlBase.Location = new Point(250, 34);
+            pnlBase.Name = "pnlBase";
+            pnlBase.Size = new Size(982, 815);
+            pnlBase.TabIndex = 2;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 849);
+            Controls.Add(pnlBase);
             Controls.Add(pnlSuperior);
             Controls.Add(panel1);
             Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -689,7 +700,7 @@
         private Button btnConfiguracoes;
         private Panel panelUltilitarios;
         private Button button9;
-        private Button button10;
+        private Button btnBancoDados;
         private Button button3;
         private Button button8;
         private Button button7;
@@ -700,5 +711,6 @@
         private Button btnEncerrar;
         private Button btnMinimize;
         private Button btnMaximize;
+        private Panel pnlBase;
     }
 }
