@@ -1,6 +1,6 @@
 ﻿namespace SmartTech
 {
-    partial class Form1
+    partial class frmPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -61,6 +61,9 @@
             button1 = new Button();
             pictureBox1 = new PictureBox();
             pnlSuperior = new Panel();
+            btnMinimize = new Button();
+            btnMaximize = new Button();
+            btnEncerrar = new Button();
             panel1.SuspendLayout();
             panelConfiguracoes.SuspendLayout();
             panelUltilitarios.SuspendLayout();
@@ -71,6 +74,7 @@
             panelCadastros.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlSuperior.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -568,6 +572,9 @@
             // pnlSuperior
             // 
             pnlSuperior.BackColor = Color.FromArgb(25, 25, 27);
+            pnlSuperior.Controls.Add(btnMinimize);
+            pnlSuperior.Controls.Add(btnMaximize);
+            pnlSuperior.Controls.Add(btnEncerrar);
             pnlSuperior.Dock = DockStyle.Top;
             pnlSuperior.Location = new Point(250, 0);
             pnlSuperior.Name = "pnlSuperior";
@@ -577,7 +584,58 @@
             pnlSuperior.MouseMove += pnlSuperior_MouseMove;
             pnlSuperior.MouseUp += pnlSuperior_MouseUp;
             // 
-            // Form1
+            // btnMinimize
+            // 
+            btnMinimize.Dock = DockStyle.Right;
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
+            btnMinimize.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.ForeColor = Color.White;
+            btnMinimize.Image = Properties.Resources.minimize;
+            btnMinimize.Location = new Point(880, 0);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(34, 34);
+            btnMinimize.TabIndex = 14;
+            btnMinimize.TextAlign = ContentAlignment.MiddleLeft;
+            btnMinimize.UseVisualStyleBackColor = true;
+            btnMinimize.Click += btnMinimize_Click;
+            // 
+            // btnMaximize
+            // 
+            btnMaximize.Dock = DockStyle.Right;
+            btnMaximize.FlatAppearance.BorderSize = 0;
+            btnMaximize.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
+            btnMaximize.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
+            btnMaximize.FlatStyle = FlatStyle.Flat;
+            btnMaximize.ForeColor = Color.White;
+            btnMaximize.Image = Properties.Resources.maximize;
+            btnMaximize.Location = new Point(914, 0);
+            btnMaximize.Name = "btnMaximize";
+            btnMaximize.Size = new Size(34, 34);
+            btnMaximize.TabIndex = 13;
+            btnMaximize.TextAlign = ContentAlignment.MiddleLeft;
+            btnMaximize.UseVisualStyleBackColor = true;
+            btnMaximize.Click += btnMaximize_Click;
+            // 
+            // btnEncerrar
+            // 
+            btnEncerrar.Dock = DockStyle.Right;
+            btnEncerrar.FlatAppearance.BorderSize = 0;
+            btnEncerrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
+            btnEncerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
+            btnEncerrar.FlatStyle = FlatStyle.Flat;
+            btnEncerrar.ForeColor = Color.White;
+            btnEncerrar.Image = Properties.Resources.clos1;
+            btnEncerrar.Location = new Point(948, 0);
+            btnEncerrar.Name = "btnEncerrar";
+            btnEncerrar.Size = new Size(34, 34);
+            btnEncerrar.TabIndex = 12;
+            btnEncerrar.TextAlign = ContentAlignment.MiddleLeft;
+            btnEncerrar.UseVisualStyleBackColor = true;
+            btnEncerrar.Click += btnEncerrar_Click;
+            // 
+            // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -585,7 +643,7 @@
             Controls.Add(pnlSuperior);
             Controls.Add(panel1);
             Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            Name = "Form1";
+            Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panel1.ResumeLayout(false);
@@ -600,6 +658,7 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlSuperior.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -638,5 +697,8 @@
         private Button button4;
         private Button button5;
         private Panel pnlSuperior;
+        private Button btnEncerrar;
+        private Button btnMinimize;
+        private Button btnMaximize;
     }
 }
