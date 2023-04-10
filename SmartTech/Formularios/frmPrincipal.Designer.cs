@@ -639,6 +639,7 @@
             // 
             // pnlBase
             // 
+            pnlBase.BackColor = Color.FromArgb(224, 224, 224);
             pnlBase.Dock = DockStyle.Fill;
             pnlBase.Location = new Point(250, 34);
             pnlBase.Name = "pnlBase";
@@ -649,6 +650,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(25, 25, 27);
             ClientSize = new Size(1232, 849);
             Controls.Add(pnlBase);
             Controls.Add(pnlSuperior);
@@ -657,6 +659,7 @@
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Resize += frmPrincipal_Resize;
             panel1.ResumeLayout(false);
             panelConfiguracoes.ResumeLayout(false);
             panelUltilitarios.ResumeLayout(false);
