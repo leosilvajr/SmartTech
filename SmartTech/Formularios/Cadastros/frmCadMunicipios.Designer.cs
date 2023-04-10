@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtCodigo = new TextBox();
+            txtNome = new TextBox();
             label2 = new Label();
-            textBox3 = new TextBox();
+            txtEstado = new TextBox();
             label3 = new Label();
             panel1.SuspendLayout();
             pnlBase.SuspendLayout();
@@ -62,6 +62,7 @@
             // btnSalvar
             // 
             btnSalvar.FlatAppearance.BorderSize = 0;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnCancelar
             // 
@@ -69,11 +70,11 @@
             // 
             // pnlBase
             // 
-            pnlBase.Controls.Add(textBox3);
+            pnlBase.Controls.Add(txtEstado);
             pnlBase.Controls.Add(label3);
-            pnlBase.Controls.Add(textBox2);
+            pnlBase.Controls.Add(txtNome);
             pnlBase.Controls.Add(label2);
-            pnlBase.Controls.Add(textBox1);
+            pnlBase.Controls.Add(txtCodigo);
             pnlBase.Controls.Add(label1);
             pnlBase.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             pnlBase.Size = new Size(538, 159);
@@ -105,19 +106,20 @@
             label1.TabIndex = 0;
             label1.Text = "Cód. Município";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            textBox1.Location = new Point(22, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 25);
-            textBox1.TabIndex = 1;
+            txtCodigo.Enabled = false;
+            txtCodigo.Location = new Point(22, 43);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(100, 25);
+            txtCodigo.TabIndex = 1;
             // 
-            // textBox2
+            // txtNome
             // 
-            textBox2.Location = new Point(22, 95);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(380, 25);
-            textBox2.TabIndex = 3;
+            txtNome.Location = new Point(22, 95);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(380, 25);
+            txtNome.TabIndex = 3;
             // 
             // label2
             // 
@@ -128,12 +130,12 @@
             label2.TabIndex = 2;
             label2.Text = "Nome";
             // 
-            // textBox3
+            // txtEstado
             // 
-            textBox3.Location = new Point(420, 95);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 25);
-            textBox3.TabIndex = 5;
+            txtEstado.Location = new Point(420, 95);
+            txtEstado.Name = "txtEstado";
+            txtEstado.Size = new Size(100, 25);
+            txtEstado.TabIndex = 5;
             // 
             // label3
             // 
@@ -161,11 +163,11 @@
 
         #endregion
 
-        private TextBox textBox3;
+        private TextBox txtEstado;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txtNome;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtCodigo;
         private Label label1;
     }
 }

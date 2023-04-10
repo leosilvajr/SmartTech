@@ -21,16 +21,6 @@ namespace SmartTech.Formularios.Configuracoes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool conexaoOk = Conexao.TestConnection();
-
-            if (conexaoOk)
-            {
-                MessageBox.Show("Conexão bem-sucedida!");
-            }
-            else
-            {
-                MessageBox.Show("Não foi possível conectar ao banco de dados.");
-            }
         }
     }
 }

@@ -1,13 +1,6 @@
 ﻿using SmartTech.Formularios.Base;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using SmartTech_Funcoes.DAO;
+using SmartTech_Funcoes.Entidades;
 
 namespace SmartTech.Formularios.Cadastros
 {
@@ -17,6 +10,19 @@ namespace SmartTech.Formularios.Cadastros
         {
             InitializeComponent();
             lblTituloFormulario.Text = "Cadastro de Municípios";
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Municipio municipio = new Municipio();
+            //municipio.Codigo = Convert.ToInt32(txtCodigo.Text);
+            municipio.Nome = txtNome.Text;
+            municipio.Estado = txtEstado.Text;
+
+            MunicipioDAO dao = new MunicipioDAO();
+            dao.Inserir(municipio);
+
+            MessageBox.Show("Município salvo com sucesso!");
         }
     }
 }

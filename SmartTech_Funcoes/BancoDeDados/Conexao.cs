@@ -7,24 +7,31 @@ using System.Threading.Tasks;
 
 namespace SmartTech_Funcoes.BancoDeDados
 {
-    public class Conexao
+    public sealed class Conexao
     {
-        private static string connectionString = "Data Source=LEO;Initial Catalog=SmartTech;Integrated Security=SSPI";
+        private static readonly string connectionString = "Data Source=LEO;Initial Catalog=SmartTech;Integrated Security=SSPI";
+        private static SqlConnection conn = null;
 
-        public static SqlConnection GetConexao()
+        private Conexao() { }
+
+        public static SqlConnection ObterConexao()
         {
-            SqlConnection conexao = new SqlConnection(connectionString);
-            conexao.Open();
-            return conexao;
+            if (conn == null)
+            {
+                conn = new SqlConnection(connectionString);
+                conn.Open();
+            }
+            return conn;
         }
 
-
-        public static bool TestConnection()
+        public static void FecharConexao()
         {
-            using (SqlConnection conexao = GetConexao())
+            if (conn != null && conn.State == System.Data.ConnectionState.Open)
             {
-                return (conexao.State == System.Data.ConnectionState.Open);
+                conn.Close();
             }
         }
     }
+
+
 }
