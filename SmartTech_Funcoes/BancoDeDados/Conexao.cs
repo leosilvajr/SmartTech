@@ -1,37 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace SmartTech_Funcoes.BancoDeDados
 {
-    public sealed class Conexao
+    public static class Conexao
     {
-        private static readonly string connectionString = "Data Source=LEO;Initial Catalog=SmartTech;Integrated Security=SSPI";
-        private static SqlConnection conn = null;
-
-        private Conexao() { }
+        private const string connectionString = "Data Source=LEO;Initial Catalog=SmartTech;Integrated Security=SSPI";
 
         public static SqlConnection ObterConexao()
         {
-            if (conn == null)
-            {
-                conn = new SqlConnection(connectionString);
-                conn.Open();
-            }
-            return conn;
+            SqlConnection conexao = new SqlConnection(connectionString);
+            conexao.Open();
+            return conexao;
         }
 
-        public static void FecharConexao()
+        public static void FecharConexao(SqlConnection conexao)
         {
-            if (conn != null && conn.State == System.Data.ConnectionState.Open)
+            if (conexao != null && conexao.State == System.Data.ConnectionState.Open)
             {
-                conn.Close();
+                conexao.Close();
             }
         }
     }
-
-
 }

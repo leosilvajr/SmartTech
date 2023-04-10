@@ -14,89 +14,65 @@ namespace SmartTech_Funcoes.DAO
         public void Inserir(Municipio municipio)
         {
             using (SqlConnection conn = Conexao.ObterConexao())
+            using (SqlCommand cmd = new SqlCommand("INSERT INTO Municipio (NOME_MUNICIPIO, ESTADO) VALUES (@Nome, @Estado)", conn))
             {
+                cmd.Parameters.AddWithValue("@Nome", municipio.Nome);
+                cmd.Parameters.AddWithValue("@Estado", municipio.Estado);
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Municipio (NOME_MUNICIPIO, ESTADO) VALUES (@Nome, @Estado)", conn);
-                    cmd.Parameters.AddWithValue("@Nome", municipio.Nome);
-                    cmd.Parameters.AddWithValue("@Estado", municipio.Estado);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    // Tratar a exceção
-                }
-                finally
-                {
-                    conn.Close();
+                    // Logar a exceção em um arquivo ou banco de dados
+                    throw new Exception("Erro ao inserir o município.", ex);
                 }
             }
         }
 
-
-        public List<Municipio> ListarTodos()
+        public List<Municipio> ObterTodos()
         {
             List<Municipio> municipios = new List<Municipio>();
+
             using (SqlConnection conn = Conexao.ObterConexao())
+            using (SqlCommand cmd = new SqlCommand("SELECT * FROM Municipio", conn))
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                try
+                while (reader.Read())
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Municipio", conn);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            Municipio municipio = new Municipio();
-                            municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
-                            municipio.Estado = Convert.ToString(reader["ESTADO"]);
-                            municipios.Add(municipio);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Tratar a exceção
-                }
-                finally
-                {
-                    conn.Close();
+                    Municipio municipio = new Municipio();
+                    municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
+                    municipio.Estado = Convert.ToString(reader["ESTADO"]);
+                    municipios.Add(municipio);
                 }
             }
+
             return municipios;
         }
 
-        public List<Municipio> ListarPorNome(string nome)
+        public List<Municipio> ObterPorNome(string nome)
         {
             List<Municipio> municipios = new List<Municipio>();
+
             using (SqlConnection conn = Conexao.ObterConexao())
+            using (SqlCommand cmd = new SqlCommand("SELECT * FROM Municipio WHERE NOME_MUNICIPIO LIKE @Nome", conn))
             {
-                try
+                cmd.Parameters.AddWithValue("@Nome", "%" + nome + "%");
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Municipio WHERE NOME_MUNICIPIO LIKE @Nome", conn);
-                    cmd.Parameters.AddWithValue("@Nome", "%" + nome + "%");
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            Municipio municipio = new Municipio();
-                            municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
-                            municipio.Estado = Convert.ToString(reader["ESTADO"]);
-                            municipios.Add(municipio);
-                        }
+                        Municipio municipio = new Municipio();
+                        municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
+                        municipio.Estado = Convert.ToString(reader["ESTADO"]);
+                        municipios.Add(municipio);
                     }
                 }
-                catch (Exception ex)
-                {
-                    // Tratar a exceção
-                }
-                finally
-                {
-                    conn.Close();
-                }
             }
+
             return municipios;
         }
     }
-
 }

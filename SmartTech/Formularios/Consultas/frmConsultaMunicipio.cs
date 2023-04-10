@@ -28,7 +28,7 @@ namespace SmartTech.Formularios.Consultas
             MunicipioDAO dao = new MunicipioDAO();
 
             // Obtenha uma lista de todos os municípios
-            List<Municipio> municipios = dao.ListarTodos();
+            List<Municipio> municipios = dao.ObterTodos();
 
             // Atribua a lista de municípios ao DataSource do DataGridView
             dgvConsulta.DataSource = municipios;
