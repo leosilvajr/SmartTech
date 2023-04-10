@@ -110,7 +110,7 @@
             btnSair.ForeColor = Color.White;
             btnSair.Image = Properties.Resources.power;
             btnSair.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSair.Location = new Point(0, 735);
+            btnSair.Location = new Point(0, 630);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(250, 32);
             btnSair.TabIndex = 18;
@@ -125,9 +125,9 @@
             panelConfiguracoes.Controls.Add(button9);
             panelConfiguracoes.Controls.Add(btnBancoDados);
             panelConfiguracoes.Dock = DockStyle.Top;
-            panelConfiguracoes.Location = new Point(0, 665);
+            panelConfiguracoes.Location = new Point(0, 580);
             panelConfiguracoes.Name = "panelConfiguracoes";
-            panelConfiguracoes.Size = new Size(250, 70);
+            panelConfiguracoes.Size = new Size(250, 50);
             panelConfiguracoes.TabIndex = 17;
             // 
             // button9
@@ -140,9 +140,9 @@
             button9.ForeColor = Color.White;
             button9.Image = Properties.Resources.degree;
             button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(0, 32);
+            button9.Location = new Point(0, 25);
             button9.Name = "button9";
-            button9.Size = new Size(250, 32);
+            button9.Size = new Size(250, 25);
             button9.TabIndex = 14;
             button9.Text = "            Produto";
             button9.TextAlign = ContentAlignment.MiddleLeft;
@@ -160,7 +160,7 @@
             btnBancoDados.ImageAlign = ContentAlignment.MiddleLeft;
             btnBancoDados.Location = new Point(0, 0);
             btnBancoDados.Name = "btnBancoDados";
-            btnBancoDados.Size = new Size(250, 32);
+            btnBancoDados.Size = new Size(250, 25);
             btnBancoDados.TabIndex = 13;
             btnBancoDados.Text = "            Banco de Dados";
             btnBancoDados.TextAlign = ContentAlignment.MiddleLeft;
@@ -177,7 +177,7 @@
             btnConfiguracoes.ForeColor = Color.White;
             btnConfiguracoes.Image = Properties.Resources.settings;
             btnConfiguracoes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnConfiguracoes.Location = new Point(0, 633);
+            btnConfiguracoes.Location = new Point(0, 548);
             btnConfiguracoes.Name = "btnConfiguracoes";
             btnConfiguracoes.Size = new Size(250, 32);
             btnConfiguracoes.TabIndex = 16;
@@ -192,9 +192,9 @@
             panelUltilitarios.Controls.Add(button3);
             panelUltilitarios.Controls.Add(button8);
             panelUltilitarios.Dock = DockStyle.Top;
-            panelUltilitarios.Location = new Point(0, 560);
+            panelUltilitarios.Location = new Point(0, 498);
             panelUltilitarios.Name = "panelUltilitarios";
-            panelUltilitarios.Size = new Size(250, 73);
+            panelUltilitarios.Size = new Size(250, 50);
             panelUltilitarios.TabIndex = 15;
             // 
             // button3
@@ -207,9 +207,9 @@
             button3.ForeColor = Color.White;
             button3.Image = Properties.Resources.degree;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(0, 32);
+            button3.Location = new Point(0, 25);
             button3.Name = "button3";
-            button3.Size = new Size(250, 32);
+            button3.Size = new Size(250, 25);
             button3.TabIndex = 12;
             button3.Text = "            Produto";
             button3.TextAlign = ContentAlignment.MiddleLeft;
@@ -227,7 +227,7 @@
             button8.ImageAlign = ContentAlignment.MiddleLeft;
             button8.Location = new Point(0, 0);
             button8.Name = "button8";
-            button8.Size = new Size(250, 32);
+            button8.Size = new Size(250, 25);
             button8.TabIndex = 11;
             button8.Text = "            Produto";
             button8.TextAlign = ContentAlignment.MiddleLeft;
@@ -286,7 +286,7 @@
             btnUltilitarios.ForeColor = Color.White;
             btnUltilitarios.Image = Properties.Resources.utility;
             btnUltilitarios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUltilitarios.Location = new Point(0, 528);
+            btnUltilitarios.Location = new Point(0, 466);
             btnUltilitarios.Name = "btnUltilitarios";
             btnUltilitarios.Size = new Size(250, 32);
             btnUltilitarios.TabIndex = 9;
@@ -301,9 +301,9 @@
             panelRelatorios.Controls.Add(button7);
             panelRelatorios.Controls.Add(button6);
             panelRelatorios.Dock = DockStyle.Top;
-            panelRelatorios.Location = new Point(0, 462);
+            panelRelatorios.Location = new Point(0, 416);
             panelRelatorios.Name = "panelRelatorios";
-            panelRelatorios.Size = new Size(250, 66);
+            panelRelatorios.Size = new Size(250, 50);
             panelRelatorios.TabIndex = 8;
             // 
             // button7
@@ -316,9 +316,9 @@
             button7.ForeColor = Color.White;
             button7.Image = Properties.Resources.degree;
             button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(0, 32);
+            button7.Location = new Point(0, 25);
             button7.Name = "button7";
-            button7.Size = new Size(250, 32);
+            button7.Size = new Size(250, 25);
             button7.TabIndex = 10;
             button7.Text = "            Produto";
             button7.TextAlign = ContentAlignment.MiddleLeft;
@@ -336,7 +336,7 @@
             button6.ImageAlign = ContentAlignment.MiddleLeft;
             button6.Location = new Point(0, 0);
             button6.Name = "button6";
-            button6.Size = new Size(250, 32);
+            button6.Size = new Size(250, 25);
             button6.TabIndex = 9;
             button6.Text = "            Produto";
             button6.TextAlign = ContentAlignment.MiddleLeft;
@@ -352,7 +352,7 @@
             btnRelatorios.ForeColor = Color.White;
             btnRelatorios.Image = Properties.Resources.relatorio_de_seo;
             btnRelatorios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRelatorios.Location = new Point(0, 430);
+            btnRelatorios.Location = new Point(0, 384);
             btnRelatorios.Name = "btnRelatorios";
             btnRelatorios.Size = new Size(250, 32);
             btnRelatorios.TabIndex = 7;
@@ -367,9 +367,9 @@
             panelFinanceiro.Controls.Add(button4);
             panelFinanceiro.Controls.Add(button5);
             panelFinanceiro.Dock = DockStyle.Top;
-            panelFinanceiro.Location = new Point(0, 359);
+            panelFinanceiro.Location = new Point(0, 334);
             panelFinanceiro.Name = "panelFinanceiro";
-            panelFinanceiro.Size = new Size(250, 71);
+            panelFinanceiro.Size = new Size(250, 50);
             panelFinanceiro.TabIndex = 6;
             // 
             // button4
@@ -382,9 +382,9 @@
             button4.ForeColor = Color.White;
             button4.Image = Properties.Resources.degree;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(0, 32);
+            button4.Location = new Point(0, 25);
             button4.Name = "button4";
-            button4.Size = new Size(250, 32);
+            button4.Size = new Size(250, 25);
             button4.TabIndex = 8;
             button4.Text = "            Produto";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -402,7 +402,7 @@
             button5.ImageAlign = ContentAlignment.MiddleLeft;
             button5.Location = new Point(0, 0);
             button5.Name = "button5";
-            button5.Size = new Size(250, 32);
+            button5.Size = new Size(250, 25);
             button5.TabIndex = 7;
             button5.Text = "            Cliente";
             button5.TextAlign = ContentAlignment.MiddleLeft;
@@ -418,7 +418,7 @@
             btnFinanceiro.ForeColor = Color.White;
             btnFinanceiro.Image = Properties.Resources.investimento;
             btnFinanceiro.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFinanceiro.Location = new Point(0, 327);
+            btnFinanceiro.Location = new Point(0, 302);
             btnFinanceiro.Name = "btnFinanceiro";
             btnFinanceiro.Size = new Size(250, 32);
             btnFinanceiro.TabIndex = 5;
@@ -436,7 +436,7 @@
             panelCadastros.Dock = DockStyle.Top;
             panelCadastros.Location = new Point(0, 227);
             panelCadastros.Name = "panelCadastros";
-            panelCadastros.Size = new Size(250, 100);
+            panelCadastros.Size = new Size(250, 75);
             panelCadastros.TabIndex = 4;
             // 
             // button13
@@ -449,13 +449,14 @@
             button13.ForeColor = Color.White;
             button13.Image = Properties.Resources.degree;
             button13.ImageAlign = ContentAlignment.MiddleLeft;
-            button13.Location = new Point(0, 64);
+            button13.Location = new Point(0, 50);
             button13.Name = "button13";
-            button13.Size = new Size(250, 32);
+            button13.Size = new Size(250, 25);
             button13.TabIndex = 6;
             button13.Text = "            Município";
             button13.TextAlign = ContentAlignment.MiddleLeft;
             button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
             // 
             // button12
             // 
@@ -467,9 +468,9 @@
             button12.ForeColor = Color.White;
             button12.Image = Properties.Resources.degree;
             button12.ImageAlign = ContentAlignment.MiddleLeft;
-            button12.Location = new Point(0, 32);
+            button12.Location = new Point(0, 25);
             button12.Name = "button12";
-            button12.Size = new Size(250, 32);
+            button12.Size = new Size(250, 25);
             button12.TabIndex = 5;
             button12.Text = "            Produto";
             button12.TextAlign = ContentAlignment.MiddleLeft;
@@ -487,7 +488,7 @@
             button11.ImageAlign = ContentAlignment.MiddleLeft;
             button11.Location = new Point(0, 0);
             button11.Name = "button11";
-            button11.Size = new Size(250, 32);
+            button11.Size = new Size(250, 25);
             button11.TabIndex = 4;
             button11.Text = "            Cliente";
             button11.TextAlign = ContentAlignment.MiddleLeft;
@@ -639,7 +640,7 @@
             // 
             // pnlBase
             // 
-            pnlBase.BackColor = Color.FromArgb(224, 224, 224);
+            pnlBase.BackColor = Color.Cornsilk;
             pnlBase.Dock = DockStyle.Fill;
             pnlBase.Location = new Point(250, 34);
             pnlBase.Name = "pnlBase";

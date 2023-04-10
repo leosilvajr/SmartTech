@@ -3,6 +3,8 @@ using System.Net.Http;
 using System.Collections.Specialized;
 using SmartTech_Funcoes;
 using SmartTech.Formularios.Configuracoes;
+using SmartTech.Formularios.Base;
+using SmartTech.Formularios.Cadastros;
 
 namespace SmartTech
 {
@@ -178,7 +180,7 @@ namespace SmartTech
             //Panel Cadastro
             if (showPanelCadastro)
             {
-                panelCadastros.Height = 96;
+                panelCadastros.Height = 75;
             }
             else
             {
@@ -188,7 +190,7 @@ namespace SmartTech
             //Panel Financeiro
             if (showPanelFinanceiro)
             {
-                panelFinanceiro.Height = 64;
+                panelFinanceiro.Height = 50;
             }
             else
             {
@@ -198,7 +200,7 @@ namespace SmartTech
             //Panel Relatorios
             if (showPanelRelatorio)
             {
-                panelRelatorios.Height = 64;
+                panelRelatorios.Height = 50;
             }
             else
             {
@@ -208,7 +210,7 @@ namespace SmartTech
             //Panel Ultilitarios 
             if (showPanelUltilitarios)
             {
-                panelUltilitarios.Height = 64;
+                panelUltilitarios.Height = 50;
             }
             else
             {
@@ -219,7 +221,7 @@ namespace SmartTech
 
             if (showPanelConfiguracoes)
             {
-                panelConfiguracoes.Height = 64;
+                panelConfiguracoes.Height = 50;
             }
             else
             {
@@ -284,6 +286,12 @@ namespace SmartTech
         private void frmPrincipal_Resize(object sender, EventArgs e)
         {
             AdjsutForm();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            frmCadMunicipios municipio = new frmCadMunicipios();
+            Util.AbreForm(pnlBase, municipio);
         }
     }
 }

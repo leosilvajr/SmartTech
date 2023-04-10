@@ -34,12 +34,14 @@
             pnlEsquerdo = new Panel();
             pnlDireito = new Panel();
             pnlBaixo = new Panel();
+            lblTituloFormulario = new Label();
             pnlSuperior.SuspendLayout();
             SuspendLayout();
             // 
             // pnlSuperior
             // 
             pnlSuperior.BackColor = Color.FromArgb(25, 25, 27);
+            pnlSuperior.Controls.Add(lblTituloFormulario);
             pnlSuperior.Controls.Add(btnMinimize);
             pnlSuperior.Controls.Add(btnEncerrar);
             pnlSuperior.Dock = DockStyle.Top;
@@ -112,11 +114,22 @@
             pnlBaixo.Size = new Size(796, 2);
             pnlBaixo.TabIndex = 5;
             // 
+            // lblTituloFormulario
+            // 
+            lblTituloFormulario.AutoSize = true;
+            lblTituloFormulario.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTituloFormulario.ForeColor = Color.White;
+            lblTituloFormulario.Location = new Point(6, 9);
+            lblTituloFormulario.Name = "lblTituloFormulario";
+            lblTituloFormulario.Size = new Size(127, 17);
+            lblTituloFormulario.TabIndex = 15;
+            lblTituloFormulario.Text = "Titulo do Formulario";
+            // 
             // frmBase
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
+            BackColor = Color.Cornsilk;
             ClientSize = new Size(800, 450);
             Controls.Add(pnlBaixo);
             Controls.Add(pnlDireito);
@@ -125,6 +138,7 @@
             Name = "frmBase";
             Text = "frmBase";
             pnlSuperior.ResumeLayout(false);
+            pnlSuperior.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -136,5 +150,6 @@
         private Panel pnlEsquerdo;
         private Panel pnlDireito;
         private Panel pnlBaixo;
+        protected Label lblTituloFormulario;
     }
 }
