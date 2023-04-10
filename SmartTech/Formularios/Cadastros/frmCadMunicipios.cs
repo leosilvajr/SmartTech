@@ -1,4 +1,6 @@
 ﻿using SmartTech.Formularios.Base;
+using SmartTech.Formularios.Consultas;
+using SmartTech_Funcoes;
 using SmartTech_Funcoes.DAO;
 using SmartTech_Funcoes.Entidades;
 
@@ -23,6 +25,12 @@ namespace SmartTech.Formularios.Cadastros
             dao.Inserir(municipio);
 
             MessageBox.Show("Município salvo com sucesso!");
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            frmConsultaMunicipio consulta = new frmConsultaMunicipio();           
+            Util.AbreForm(this, consulta);
         }
     }
 }

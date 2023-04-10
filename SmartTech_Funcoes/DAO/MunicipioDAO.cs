@@ -15,18 +15,25 @@ namespace SmartTech_Funcoes.DAO
         {
             using (SqlConnection conn = Conexao.ObterConexao())
             {
+
                 try
                 {
                     SqlCommand cmd = new SqlCommand("INSERT INTO Municipio (NOME_MUNICIPIO, ESTADO) VALUES (@Nome, @Estado)", conn);
                     cmd.Parameters.AddWithValue("@Nome", municipio.Nome);
                     cmd.Parameters.AddWithValue("@Estado", municipio.Estado);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Tratar a exceção
                 }
                 finally
                 {
-                    Conexao.FecharConexao();
+                    conn.Close();
                 }
             }
         }
+
 
         public List<Municipio> ListarTodos()
         {
@@ -36,21 +43,60 @@ namespace SmartTech_Funcoes.DAO
                 try
                 {
                     SqlCommand cmd = new SqlCommand("SELECT * FROM Municipio", conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        Municipio municipio = new Municipio();
-                        municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
-                        municipio.Estado = Convert.ToString(reader["ESTADO"]);
-                        municipios.Add(municipio);
+                        while (reader.Read())
+                        {
+                            Municipio municipio = new Municipio();
+                            municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
+                            municipio.Estado = Convert.ToString(reader["ESTADO"]);
+                            municipios.Add(municipio);
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    // Tratar a exceção
                 }
                 finally
                 {
-                    Conexao.FecharConexao();
+                    conn.Close();
+                }
+            }
+            return municipios;
+        }
+
+        public List<Municipio> ListarPorNome(string nome)
+        {
+            List<Municipio> municipios = new List<Municipio>();
+            using (SqlConnection conn = Conexao.ObterConexao())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Municipio WHERE NOME_MUNICIPIO LIKE @Nome", conn);
+                    cmd.Parameters.AddWithValue("@Nome", "%" + nome + "%");
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Municipio municipio = new Municipio();
+                            municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
+                            municipio.Estado = Convert.ToString(reader["ESTADO"]);
+                            municipios.Add(municipio);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Tratar a exceção
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
             return municipios;
         }
     }
+
 }

@@ -50,6 +50,7 @@
             // btnProcurar
             // 
             btnProcurar.FlatAppearance.BorderSize = 0;
+            btnProcurar.Click += btnProcurar_Click;
             // 
             // btnExcluir
             // 
