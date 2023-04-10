@@ -29,7 +29,7 @@ namespace SmartTech.Formularios.Cadastros
 
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            frmConsultaMunicipio consulta = new frmConsultaMunicipio();           
+            frmConsultaMunicipio consulta = new frmConsultaMunicipio();
             Util.AbreForm(this, consulta);
         }
     }

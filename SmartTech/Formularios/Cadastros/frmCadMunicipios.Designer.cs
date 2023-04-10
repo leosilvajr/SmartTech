@@ -147,6 +147,7 @@
             label3.TabIndex = 4;
             label3.Text = "Estado";
             // 
+            // 
             // frmCadMunicipios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);

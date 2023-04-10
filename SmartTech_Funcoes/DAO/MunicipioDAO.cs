@@ -42,6 +42,7 @@ namespace SmartTech_Funcoes.DAO
                 while (reader.Read())
                 {
                     Municipio municipio = new Municipio();
+                    municipio.Codigo = (int)reader["COD_MUNICIPIO"];
                     municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
                     municipio.Estado = Convert.ToString(reader["ESTADO"]);
                     municipios.Add(municipio);

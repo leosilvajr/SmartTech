@@ -15,6 +15,7 @@ namespace SmartTech.Formularios.Base
         public frmBaseConsulta()
         {
             InitializeComponent();
+            dgvConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
     }
 }
