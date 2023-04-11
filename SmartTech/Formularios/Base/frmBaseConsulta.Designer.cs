@@ -50,6 +50,7 @@
             // 
             pnlSuperior.Location = new Point(2, 0);
             pnlSuperior.Size = new Size(764, 39);
+            pnlSuperior.TabIndex = 5;
             // 
             // btnMinimize
             // 
@@ -75,8 +76,9 @@
             txtConsulta.Location = new Point(6, 49);
             txtConsulta.Name = "txtConsulta";
             txtConsulta.Size = new Size(754, 25);
-            txtConsulta.TabIndex = 6;
+            txtConsulta.TabIndex = 0;
             txtConsulta.TextChanged += txtConsulta_TextChanged;
+            txtConsulta.KeyDown += txtConsulta_KeyDown;
             // 
             // cboPesquisaPor
             // 
@@ -194,6 +196,7 @@
             Name = "frmBaseConsulta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "r";
+            Load += frmBaseConsulta_Load;
             Controls.SetChildIndex(txtConsulta, 0);
             Controls.SetChildIndex(cboPesquisaPor, 0);
             Controls.SetChildIndex(label1, 0);
