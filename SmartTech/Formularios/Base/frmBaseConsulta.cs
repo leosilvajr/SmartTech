@@ -15,6 +15,7 @@ namespace SmartTech.Formularios.Base
         public frmBaseConsulta()
         {
             InitializeComponent();
+            radioContenha.Checked = true;
             dgvConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
@@ -23,10 +24,20 @@ namespace SmartTech.Formularios.Base
             return true;
         }
 
+        public virtual bool Func_TextChanged()
+        {
+            return true;
+        }
+
         private void dgvConsulta_DoubleClick(object sender, EventArgs e)
         {
             Func_PegaRegistroSelecionado();
             this.Close();
+        }
+
+        private void txtConsulta_TextChanged(object sender, EventArgs e)
+        {
+            Func_TextChanged();
         }
     }
 }

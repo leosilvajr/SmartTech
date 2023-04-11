@@ -48,6 +48,21 @@ namespace SmartTech.Formularios.Consultas
                 return false;
             }
         }
+
+        public override bool Func_TextChanged()
+        {
+            string textoConsulta = txtConsulta.Text.Trim().ToLower();
+
+            if (string.IsNullOrWhiteSpace(textoConsulta))
+            {
+                dgvConsulta.DataSource = lista;
+            }
+            else
+            {
+                dgvConsulta.DataSource = lista.Where(m => m.Nome.ToLower().Contains(textoConsulta)).ToList();
+            }
+            return base.Func_TextChanged();
+        }
         private void frmConsultaMunicipio_Load(object sender, EventArgs e)
         {
             // Crie uma instância da classe MunicipioDAO
@@ -55,6 +70,8 @@ namespace SmartTech.Formularios.Consultas
 
             // Obtenha uma lista de todos os municípios
             lista = dao.ObterTodos();
+            toolStripRegistros.Text = lista.Count().ToString();
+            
 
             // Atribua a lista de municípios ao DataSource do DataGridView
             dgvConsulta.DataSource = lista;
@@ -65,7 +82,8 @@ namespace SmartTech.Formularios.Consultas
             dgvConsulta.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dgvConsulta.Columns["Estado"].HeaderText = "Estado";
-            
+
+
         }
     }
 }

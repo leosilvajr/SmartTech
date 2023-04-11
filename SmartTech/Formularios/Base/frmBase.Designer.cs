@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             pnlSuperior = new Panel();
+            lblTituloFormulario = new Label();
             btnMinimize = new Button();
             btnEncerrar = new Button();
             pnlEsquerdo = new Panel();
             pnlDireito = new Panel();
             pnlBaixo = new Panel();
-            lblTituloFormulario = new Label();
             pnlSuperior.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,11 +47,22 @@
             pnlSuperior.Dock = DockStyle.Top;
             pnlSuperior.Location = new Point(0, 0);
             pnlSuperior.Name = "pnlSuperior";
-            pnlSuperior.Size = new Size(800, 34);
+            pnlSuperior.Size = new Size(800, 39);
             pnlSuperior.TabIndex = 2;
             pnlSuperior.MouseDown += pnlSuperior_MouseDown;
             pnlSuperior.MouseMove += pnlSuperior_MouseMove;
             pnlSuperior.MouseUp += pnlSuperior_MouseUp;
+            // 
+            // lblTituloFormulario
+            // 
+            lblTituloFormulario.AutoSize = true;
+            lblTituloFormulario.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTituloFormulario.ForeColor = Color.White;
+            lblTituloFormulario.Location = new Point(6, 10);
+            lblTituloFormulario.Name = "lblTituloFormulario";
+            lblTituloFormulario.Size = new Size(127, 17);
+            lblTituloFormulario.TabIndex = 15;
+            lblTituloFormulario.Text = "Titulo do Formulario";
             // 
             // btnMinimize
             // 
@@ -64,7 +75,7 @@
             btnMinimize.Image = Properties.Resources.minimize;
             btnMinimize.Location = new Point(732, 0);
             btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(34, 34);
+            btnMinimize.Size = new Size(34, 39);
             btnMinimize.TabIndex = 14;
             btnMinimize.TextAlign = ContentAlignment.MiddleLeft;
             btnMinimize.UseVisualStyleBackColor = true;
@@ -81,7 +92,7 @@
             btnEncerrar.Image = Properties.Resources.clos1;
             btnEncerrar.Location = new Point(766, 0);
             btnEncerrar.Name = "btnEncerrar";
-            btnEncerrar.Size = new Size(34, 34);
+            btnEncerrar.Size = new Size(34, 39);
             btnEncerrar.TabIndex = 12;
             btnEncerrar.TextAlign = ContentAlignment.MiddleLeft;
             btnEncerrar.UseVisualStyleBackColor = true;
@@ -91,50 +102,40 @@
             // 
             pnlEsquerdo.BackColor = Color.FromArgb(25, 25, 27);
             pnlEsquerdo.Dock = DockStyle.Left;
-            pnlEsquerdo.Location = new Point(0, 34);
+            pnlEsquerdo.Location = new Point(0, 39);
             pnlEsquerdo.Name = "pnlEsquerdo";
-            pnlEsquerdo.Size = new Size(2, 416);
+            pnlEsquerdo.Size = new Size(2, 471);
             pnlEsquerdo.TabIndex = 3;
             // 
             // pnlDireito
             // 
             pnlDireito.BackColor = Color.FromArgb(25, 25, 27);
             pnlDireito.Dock = DockStyle.Right;
-            pnlDireito.Location = new Point(798, 34);
+            pnlDireito.Location = new Point(798, 39);
             pnlDireito.Name = "pnlDireito";
-            pnlDireito.Size = new Size(2, 416);
+            pnlDireito.Size = new Size(2, 471);
             pnlDireito.TabIndex = 4;
             // 
             // pnlBaixo
             // 
             pnlBaixo.BackColor = Color.FromArgb(25, 25, 27);
             pnlBaixo.Dock = DockStyle.Bottom;
-            pnlBaixo.Location = new Point(2, 448);
+            pnlBaixo.Location = new Point(2, 508);
             pnlBaixo.Name = "pnlBaixo";
             pnlBaixo.Size = new Size(796, 2);
             pnlBaixo.TabIndex = 5;
             // 
-            // lblTituloFormulario
-            // 
-            lblTituloFormulario.AutoSize = true;
-            lblTituloFormulario.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTituloFormulario.ForeColor = Color.White;
-            lblTituloFormulario.Location = new Point(6, 9);
-            lblTituloFormulario.Name = "lblTituloFormulario";
-            lblTituloFormulario.Size = new Size(127, 17);
-            lblTituloFormulario.TabIndex = 15;
-            lblTituloFormulario.Text = "Titulo do Formulario";
-            // 
             // frmBase
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Cornsilk;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 510);
             Controls.Add(pnlBaixo);
             Controls.Add(pnlDireito);
             Controls.Add(pnlEsquerdo);
             Controls.Add(pnlSuperior);
+            Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "frmBase";
             Text = "frmBase";
             pnlSuperior.ResumeLayout(false);

@@ -102,7 +102,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 25);
+            label1.Location = new Point(20, 25);
             label1.Name = "label1";
             label1.Size = new Size(96, 17);
             label1.TabIndex = 0;
@@ -110,15 +110,17 @@
             // 
             // txtCodigo
             // 
+            txtCodigo.BorderStyle = BorderStyle.FixedSingle;
             txtCodigo.Enabled = false;
-            txtCodigo.Location = new Point(22, 43);
+            txtCodigo.Location = new Point(22, 45);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(100, 25);
             txtCodigo.TabIndex = 1;
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(22, 95);
+            txtNome.BorderStyle = BorderStyle.FixedSingle;
+            txtNome.Location = new Point(22, 97);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(380, 25);
             txtNome.TabIndex = 3;
@@ -126,7 +128,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(22, 77);
+            label2.Location = new Point(20, 77);
             label2.Name = "label2";
             label2.Size = new Size(44, 17);
             label2.TabIndex = 2;
@@ -134,7 +136,8 @@
             // 
             // txtEstado
             // 
-            txtEstado.Location = new Point(420, 95);
+            txtEstado.BorderStyle = BorderStyle.FixedSingle;
+            txtEstado.Location = new Point(420, 97);
             txtEstado.Name = "txtEstado";
             txtEstado.Size = new Size(100, 25);
             txtEstado.TabIndex = 5;

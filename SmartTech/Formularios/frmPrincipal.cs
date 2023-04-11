@@ -2,7 +2,6 @@ using static System.Net.WebRequestMethods;
 using System.Net.Http;
 using System.Collections.Specialized;
 using SmartTech_Funcoes;
-using SmartTech.Formularios.Configuracoes;
 using SmartTech.Formularios.Base;
 using SmartTech.Formularios.Cadastros;
 
@@ -31,8 +30,9 @@ namespace SmartTech
         public frmPrincipal()
         {
             InitializeComponent();
+            this.Size = new Size(1100, 700);
             this.FormBorderStyle = FormBorderStyle.None;
-            this.MinimumSize = new Size(800, 600);
+            this.MinimumSize = new Size(600, 400);
             tooglePanels();
             pnlSuperior.MouseDown += new MouseEventHandler(pnlSuperior_MouseDown);
             pnlSuperior.MouseMove += new MouseEventHandler(pnlSuperior_MouseMove);
@@ -277,12 +277,6 @@ namespace SmartTech
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnBancoDados_Click(object sender, EventArgs e)
-        {
-            frmBancoDados banco = new frmBancoDados();
-            Util.AbreForm(pnlBase, banco);
-        }
-
         private void frmPrincipal_Resize(object sender, EventArgs e)
         {
             AdjsutForm();
@@ -293,5 +287,6 @@ namespace SmartTech
             frmCadMunicipios municipio = new frmCadMunicipios();
             Util.AbreForm(pnlBase, municipio);
         }
+
     }
 }

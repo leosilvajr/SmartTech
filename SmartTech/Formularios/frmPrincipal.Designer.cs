@@ -38,6 +38,7 @@
             button3 = new Button();
             button8 = new Button();
             panel8 = new Panel();
+            label2 = new Label();
             label4 = new Label();
             label3 = new Label();
             pictureBox2 = new PictureBox();
@@ -165,7 +166,6 @@
             btnBancoDados.Text = "            Banco de Dados";
             btnBancoDados.TextAlign = ContentAlignment.MiddleLeft;
             btnBancoDados.UseVisualStyleBackColor = true;
-            btnBancoDados.Click += btnBancoDados_Click;
             // 
             // btnConfiguracoes
             // 
@@ -235,6 +235,7 @@
             // 
             // panel8
             // 
+            panel8.Controls.Add(label2);
             panel8.Controls.Add(label4);
             panel8.Controls.Add(label3);
             panel8.Controls.Add(pictureBox2);
@@ -243,6 +244,17 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(250, 60);
             panel8.TabIndex = 14;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(123, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(61, 15);
+            label2.TabIndex = 6;
+            label2.Text = "Leonardo";
             // 
             // label4
             // 
@@ -262,9 +274,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(56, 14);
             label3.Name = "label3";
-            label3.Size = new Size(61, 15);
+            label3.Size = new Size(72, 15);
             label3.TabIndex = 4;
-            label3.Text = "Leonardo";
+            label3.Text = "Bem vindo, ";
             // 
             // pictureBox2
             // 
@@ -716,5 +728,6 @@
         private Button btnMinimize;
         private Button btnMaximize;
         private Panel pnlBase;
+        private Label label2;
     }
 }
