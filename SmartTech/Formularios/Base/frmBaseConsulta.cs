@@ -44,10 +44,6 @@ namespace SmartTech.Formularios.Base
             Func_TextChanged();
         }
 
-        private void frmBaseConsulta_Load(object sender, EventArgs e)
-        {
-            txtConsulta.Focus();
-        }
 
         private void txtConsulta_KeyDown(object sender, KeyEventArgs e)
         {
@@ -78,6 +74,11 @@ namespace SmartTech.Formularios.Base
             {
                 this.Close();
             }
+        }
+
+        private void frmBaseConsulta_Load(object sender, EventArgs e)
+        {
+            txtConsulta.Focus();
         }
     }
 }

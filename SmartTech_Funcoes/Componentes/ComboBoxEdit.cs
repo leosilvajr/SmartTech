@@ -10,7 +10,9 @@ namespace SmartTech_Funcoes.Componentes
     {
         public ComboBoxEdit()
         {
- 
+            //Mostra apenas 5
+            this.DropDownHeight = ItemHeight * 5;
+            
         }
         protected override void OnKeyPress(KeyPressEventArgs e)
         {

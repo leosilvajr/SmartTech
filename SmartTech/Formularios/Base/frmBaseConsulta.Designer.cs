@@ -175,7 +175,9 @@
             txtConsulta.Location = new Point(8, 45);
             txtConsulta.Name = "txtConsulta";
             txtConsulta.Size = new Size(752, 25);
-            txtConsulta.TabIndex = 15;
+            txtConsulta.TabIndex = 0;
+            txtConsulta.TextChanged += txtConsulta_TextChanged;
+            txtConsulta.KeyDown += txtConsulta_KeyDown;
             // 
             // frmBaseConsulta
             // 
