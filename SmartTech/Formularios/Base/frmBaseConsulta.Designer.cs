@@ -111,9 +111,9 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(toolStrip1);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 425);
+            panel1.Location = new Point(2, 423);
             panel1.Name = "panel1";
-            panel1.Size = new Size(768, 25);
+            panel1.Size = new Size(764, 25);
             panel1.TabIndex = 12;
             // 
             // toolStrip1
@@ -121,7 +121,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripLabel1, toolStripRegistros });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(766, 25);
+            toolStrip1.Size = new Size(762, 25);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -169,6 +169,7 @@
             dgvConsulta.RowTemplate.Height = 25;
             dgvConsulta.Size = new Size(754, 303);
             dgvConsulta.TabIndex = 11;
+            dgvConsulta.DoubleClick += dgvConsulta_DoubleClick;
             // 
             // frmBaseConsulta
             // 

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Controles\Controles.csproj" />
     <ProjectReference Include="..\SmartTech_Funcoes\SmartTech_Funcoes.csproj" />
   </ItemGroup>
 

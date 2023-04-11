@@ -17,5 +17,16 @@ namespace SmartTech.Formularios.Base
             InitializeComponent();
             dgvConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
+        public virtual bool Func_PegaRegistroSelecionado()
+        {
+            return true;
+        }
+
+        private void dgvConsulta_DoubleClick(object sender, EventArgs e)
+        {
+            Func_PegaRegistroSelecionado();
+            this.Close();
+        }
     }
 }

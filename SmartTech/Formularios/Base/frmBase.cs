@@ -28,6 +28,10 @@ namespace SmartTech.Formularios.Base
 
         }
 
+        public virtual void MontaTela()
+        {
+
+        }
 
 
         //Propriedade que Adiciona Sombra no Formulario

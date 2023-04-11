@@ -20,6 +20,14 @@ namespace SmartTech.Formularios.Base
             pnlBase.Enabled = false;
         }
 
+        public override void MontaTela()
+        {
+            //LimpaControles(this.Controls);
+            base.MontaTela();
+            //IniciarFocusControle(this.Controls);
+            //Status = Enums.AcaoTelaStatus.Navegando;
+
+        }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             btnAdicionar.Enabled = false;

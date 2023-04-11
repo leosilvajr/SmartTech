@@ -3,14 +3,18 @@ using SmartTech.Formularios.Consultas;
 using SmartTech_Funcoes;
 using SmartTech_Funcoes.DAO;
 using SmartTech_Funcoes.Entidades;
+using System.Windows.Forms;
 
 namespace SmartTech.Formularios.Cadastros
 {
     public partial class frmCadMunicipios : frmBaseCadastro
     {
+        Municipio municipio;
+        public Util.DelegateRetornoConsulta<Municipio> SetRetornoConsultaCallback;
         public frmCadMunicipios()
         {
             InitializeComponent();
+            municipio = new Municipio();
             lblTituloFormulario.Text = "Cadastro de Municípios";
         }
 
@@ -26,10 +30,24 @@ namespace SmartTech.Formularios.Cadastros
 
             MessageBox.Show("Município salvo com sucesso!");
         }
+        private void RetornoConsultaCallbackFn(Municipio entidade)
+        {
+            try
+            {
+                municipio = entidade;
+                MontaTela();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro");
+                //Mensagem.MostraErro(ex.Message);
+            }
+        }
         private void btnProcurar_Click(object sender, EventArgs e)
         {
             frmConsultaMunicipio consulta = new frmConsultaMunicipio();
+            consulta.SetRetornoConsultaCallback = new Util.DelegateRetornoConsulta<Municipio>(RetornoConsultaCallbackFn);
             Util.AbreForm(this, consulta);
         }
     }
