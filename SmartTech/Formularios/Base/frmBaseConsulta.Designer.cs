@@ -197,6 +197,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "r";
             Load += frmBaseConsulta_Load;
+            KeyDown += frmBaseConsulta_KeyDown;
             Controls.SetChildIndex(txtConsulta, 0);
             Controls.SetChildIndex(cboPesquisaPor, 0);
             Controls.SetChildIndex(label1, 0);

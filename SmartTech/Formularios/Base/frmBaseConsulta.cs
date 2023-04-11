@@ -71,5 +71,13 @@ namespace SmartTech.Formularios.Base
                 e.Handled = true; // marque o evento como tratado para evitar que o DataGridView processe o evento Enter
             }
         }
+
+        private void frmBaseConsulta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

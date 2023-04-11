@@ -46,7 +46,7 @@
             // pnlSuperior
             // 
             pnlSuperior.Location = new Point(2, 0);
-            pnlSuperior.Size = new Size(796, 34);
+            pnlSuperior.Size = new Size(796, 39);
             // 
             // btnMinimize
             // 
@@ -62,6 +62,10 @@
             btnEncerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
             btnEncerrar.Location = new Point(762, 0);
             // 
+            // lblTituloFormulario
+            // 
+            lblTituloFormulario.Location = new Point(6, 11);
+            // 
             // panel1
             // 
             panel1.BackColor = Color.Wheat;
@@ -73,9 +77,9 @@
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnAdicionar);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(2, 34);
+            panel1.Location = new Point(2, 39);
             panel1.Name = "panel1";
-            panel1.Size = new Size(796, 55);
+            panel1.Size = new Size(796, 62);
             panel1.TabIndex = 6;
             // 
             // btnProcurar
@@ -86,7 +90,7 @@
             btnProcurar.Image = (Image)resources.GetObject("btnProcurar.Image");
             btnProcurar.Location = new Point(295, 0);
             btnProcurar.Name = "btnProcurar";
-            btnProcurar.Size = new Size(59, 53);
+            btnProcurar.Size = new Size(59, 60);
             btnProcurar.TabIndex = 5;
             btnProcurar.Tag = "Procurar";
             toolTip1.SetToolTip(btnProcurar, "Procurar");
@@ -100,7 +104,7 @@
             btnExcluir.Image = (Image)resources.GetObject("btnExcluir.Image");
             btnExcluir.Location = new Point(236, 0);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(59, 53);
+            btnExcluir.Size = new Size(59, 60);
             btnExcluir.TabIndex = 4;
             btnExcluir.Tag = "Excluir Registro";
             toolTip1.SetToolTip(btnExcluir, "Excluir Registro");
@@ -114,7 +118,7 @@
             btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
             btnEditar.Location = new Point(177, 0);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(59, 53);
+            btnEditar.Size = new Size(59, 60);
             btnEditar.TabIndex = 3;
             btnEditar.Tag = "Editar Registro";
             toolTip1.SetToolTip(btnEditar, "Editar Registro");
@@ -129,7 +133,7 @@
             btnSalvar.Image = (Image)resources.GetObject("btnSalvar.Image");
             btnSalvar.Location = new Point(118, 0);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(59, 53);
+            btnSalvar.Size = new Size(59, 60);
             btnSalvar.TabIndex = 2;
             btnSalvar.Tag = "Salvar Registro";
             toolTip1.SetToolTip(btnSalvar, "Salvar Registro");
@@ -144,7 +148,7 @@
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.Location = new Point(59, 0);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(59, 53);
+            btnCancelar.Size = new Size(59, 60);
             btnCancelar.TabIndex = 1;
             btnCancelar.Tag = "Cancelar Ação";
             toolTip1.SetToolTip(btnCancelar, "Cancelar Ação");
@@ -159,7 +163,7 @@
             btnAdicionar.Image = Properties.Resources.plus;
             btnAdicionar.Location = new Point(0, 0);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(59, 53);
+            btnAdicionar.Size = new Size(59, 60);
             btnAdicionar.TabIndex = 0;
             btnAdicionar.Tag = "Adicionar Registro";
             toolTip1.SetToolTip(btnAdicionar, "Adicionar Registro");
@@ -169,20 +173,22 @@
             // pnlBase
             // 
             pnlBase.Dock = DockStyle.Fill;
-            pnlBase.Location = new Point(2, 89);
+            pnlBase.Location = new Point(2, 101);
             pnlBase.Name = "pnlBase";
-            pnlBase.Size = new Size(796, 359);
+            pnlBase.Size = new Size(796, 407);
             pnlBase.TabIndex = 7;
             // 
             // frmBaseCadastro
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 510);
             Controls.Add(pnlBase);
             Controls.Add(panel1);
             Name = "frmBaseCadastro";
             Text = "frmBaseCadastro";
+            Load += frmBaseCadastro_Load;
+            KeyDown += frmBaseCadastro_KeyDown;
             Controls.SetChildIndex(pnlSuperior, 0);
             Controls.SetChildIndex(panel1, 0);
             Controls.SetChildIndex(pnlBase, 0);

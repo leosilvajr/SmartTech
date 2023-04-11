@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            txtCodigo = new TextBox();
-            txtNome = new TextBox();
             label2 = new Label();
-            txtEstado = new TextBox();
             label3 = new Label();
+            txtCodigo = new SmartTech_Funcoes.Componentes.TextBoxEdit();
+            txtNome = new SmartTech_Funcoes.Componentes.TextBoxEdit();
+            txtEstado = new SmartTech_Funcoes.Componentes.TextBoxEdit();
             panel1.SuspendLayout();
             pnlBase.SuspendLayout();
             pnlSuperior.SuspendLayout();
@@ -41,7 +41,7 @@
             // 
             // panel1
             // 
-            panel1.Size = new Size(538, 55);
+            panel1.Size = new Size(538, 62);
             // 
             // btnAdicionar
             // 
@@ -73,17 +73,17 @@
             // pnlBase
             // 
             pnlBase.Controls.Add(txtEstado);
-            pnlBase.Controls.Add(label3);
             pnlBase.Controls.Add(txtNome);
-            pnlBase.Controls.Add(label2);
             pnlBase.Controls.Add(txtCodigo);
+            pnlBase.Controls.Add(label3);
+            pnlBase.Controls.Add(label2);
             pnlBase.Controls.Add(label1);
             pnlBase.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            pnlBase.Size = new Size(538, 159);
+            pnlBase.Size = new Size(538, 180);
             // 
             // pnlSuperior
             // 
-            pnlSuperior.Size = new Size(538, 34);
+            pnlSuperior.Size = new Size(538, 39);
             // 
             // btnMinimize
             // 
@@ -102,60 +102,60 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(20, 25);
+            label1.Location = new Point(20, 28);
             label1.Name = "label1";
             label1.Size = new Size(96, 17);
             label1.TabIndex = 0;
             label1.Text = "Cód. Município";
             // 
-            // txtCodigo
-            // 
-            txtCodigo.BorderStyle = BorderStyle.FixedSingle;
-            txtCodigo.Enabled = false;
-            txtCodigo.Location = new Point(22, 45);
-            txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(100, 25);
-            txtCodigo.TabIndex = 1;
-            // 
-            // txtNome
-            // 
-            txtNome.BorderStyle = BorderStyle.FixedSingle;
-            txtNome.Location = new Point(22, 97);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(380, 25);
-            txtNome.TabIndex = 3;
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(20, 77);
+            label2.Location = new Point(20, 87);
             label2.Name = "label2";
             label2.Size = new Size(44, 17);
             label2.TabIndex = 2;
             label2.Text = "Nome";
             // 
-            // txtEstado
-            // 
-            txtEstado.BorderStyle = BorderStyle.FixedSingle;
-            txtEstado.Location = new Point(420, 97);
-            txtEstado.Name = "txtEstado";
-            txtEstado.Size = new Size(100, 25);
-            txtEstado.TabIndex = 5;
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(420, 77);
+            label3.Location = new Point(420, 87);
             label3.Name = "label3";
             label3.Size = new Size(48, 17);
             label3.TabIndex = 4;
             label3.Text = "Estado";
             // 
+            // txtCodigo
+            // 
+            txtCodigo.BorderStyle = BorderStyle.FixedSingle;
+            txtCodigo.Enabled = false;
+            txtCodigo.Location = new Point(20, 48);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(100, 25);
+            txtCodigo.TabIndex = 5;
+            // 
+            // txtNome
+            // 
+            txtNome.BorderStyle = BorderStyle.FixedSingle;
+            txtNome.Location = new Point(20, 107);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(365, 25);
+            txtNome.TabIndex = 6;
+            // 
+            // txtEstado
+            // 
+            txtEstado.BorderStyle = BorderStyle.FixedSingle;
+            txtEstado.Location = new Point(420, 107);
+            txtEstado.Name = "txtEstado";
+            txtEstado.Size = new Size(100, 25);
+            txtEstado.TabIndex = 7;
+            // 
             // frmCadMunicipios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(542, 250);
+            ClientSize = new Size(542, 283);
             Name = "frmCadMunicipios";
             Text = "frmCadMunicipios";
             panel1.ResumeLayout(false);
@@ -167,12 +167,11 @@
         }
 
         #endregion
-
-        private TextBox txtEstado;
         private Label label3;
-        private TextBox txtNome;
         private Label label2;
-        private TextBox txtCodigo;
         private Label label1;
+        private SmartTech_Funcoes.Componentes.TextBoxEdit txtEstado;
+        private SmartTech_Funcoes.Componentes.TextBoxEdit txtNome;
+        private SmartTech_Funcoes.Componentes.TextBoxEdit txtCodigo;
     }
 }

@@ -87,5 +87,23 @@ namespace SmartTech.Formularios.Base
             btnProcurar.Enabled = true;
             pnlBase.Enabled = false;
         }
+
+        private void frmBaseCadastro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void frmBaseCadastro_Load(object sender, EventArgs e)
+        {
+            btnAdicionar.Focus();
+        }
     }
 }
