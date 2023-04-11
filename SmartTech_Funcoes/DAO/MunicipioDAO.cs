@@ -31,6 +31,46 @@ namespace SmartTech_Funcoes.DAO
             }
         }
 
+        public void Atualizar(Municipio municipio)
+        {
+            using (SqlConnection conn = Conexao.ObterConexao())
+            using (SqlCommand cmd = new SqlCommand("UPDATE Municipio SET NOME_MUNICIPIO = @Nome, ESTADO = @Estado WHERE COD_MUNICIPIO = @Codigo", conn))
+            {
+                cmd.Parameters.AddWithValue("@Codigo", municipio.Codigo);
+                cmd.Parameters.AddWithValue("@Nome", municipio.Nome);
+                cmd.Parameters.AddWithValue("@Estado", municipio.Estado);
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Logar a exceção em um arquivo ou banco de dados
+                    throw new Exception("Erro ao atualizar o município.", ex);
+                }
+            }
+        }
+
+        public void Excluir(int codigo)
+        {
+            using (SqlConnection conn = Conexao.ObterConexao())
+            using (SqlCommand cmd = new SqlCommand("DELETE FROM Municipio WHERE COD_MUNICIPIO = @Codigo", conn))
+            {
+                cmd.Parameters.AddWithValue("@Codigo", codigo);
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    // Logar a exceção em um arquivo ou banco de dados
+                    throw new Exception("Erro ao excluir o município.", ex);
+                }
+            }
+        }
+
         public List<Municipio> ObterTodos()
         {
             List<Municipio> municipios = new List<Municipio>();
@@ -52,6 +92,30 @@ namespace SmartTech_Funcoes.DAO
             return municipios;
         }
 
+        public Municipio ObterPorCodigo(int codigo)
+        {
+            using (SqlConnection conn = Conexao.ObterConexao())
+            using (SqlCommand cmd = new SqlCommand("SELECT * FROM Municipio WHERE COD_MUNICIPIO = @Codigo", conn))
+            {
+                cmd.Parameters.AddWithValue("@Codigo", codigo);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Municipio municipio = new Municipio();
+                        municipio.Codigo = (int)reader["COD_MUNICIPIO"];
+                        municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
+                        municipio.Estado = Convert.ToString(reader["ESTADO"]);
+                        return municipio;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+
         public List<Municipio> ObterPorNome(string nome)
         {
             List<Municipio> municipios = new List<Municipio>();
@@ -66,6 +130,7 @@ namespace SmartTech_Funcoes.DAO
                     while (reader.Read())
                     {
                         Municipio municipio = new Municipio();
+                        municipio.Codigo = (int)reader["COD_MUNICIPIO"];
                         municipio.Nome = Convert.ToString(reader["NOME_MUNICIPIO"]);
                         municipio.Estado = Convert.ToString(reader["ESTADO"]);
                         municipios.Add(municipio);
@@ -75,5 +140,7 @@ namespace SmartTech_Funcoes.DAO
 
             return municipios;
         }
+
     }
+
 }

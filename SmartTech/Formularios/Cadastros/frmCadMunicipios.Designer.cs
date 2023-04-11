@@ -55,6 +55,7 @@
             // btnExcluir
             // 
             btnExcluir.FlatAppearance.BorderSize = 0;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnEditar
             // 
@@ -146,7 +147,6 @@
             label3.Size = new Size(48, 17);
             label3.TabIndex = 4;
             label3.Text = "Estado";
-            // 
             // 
             // frmCadMunicipios
             // 

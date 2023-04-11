@@ -17,12 +17,15 @@ namespace SmartTech.Formularios.Base
             InitializeComponent();
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = false;
+            btnEditar.Enabled = true;
+            btnExcluir.Enabled = true;
             pnlBase.Enabled = false;
         }
 
         public override void MontaTela()
         {
             base.MontaTela();
+            LimparCamposTextBox(pnlBase);
         }
 
         private void LimparCamposTextBox(Panel panel)
@@ -45,6 +48,7 @@ namespace SmartTech.Formularios.Base
             btnEditar.Enabled = false;
             btnExcluir.Enabled = false;
             btnSalvar.Enabled = true;
+            btnProcurar.Enabled = false;
             pnlBase.Enabled = true;
         }
 
@@ -56,6 +60,7 @@ namespace SmartTech.Formularios.Base
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
             btnSalvar.Enabled = false;
+            btnProcurar.Enabled = true;
             pnlBase.Enabled = false;
         }
 
@@ -67,6 +72,7 @@ namespace SmartTech.Formularios.Base
             btnEditar.Enabled = false;
             btnExcluir.Enabled = false;
             btnSalvar.Enabled = true;
+            btnProcurar.Enabled = false;
             pnlBase.Enabled = true;
         }
 
@@ -78,6 +84,7 @@ namespace SmartTech.Formularios.Base
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
             btnSalvar.Enabled = false;
+            btnProcurar.Enabled = true;
             pnlBase.Enabled = false;
         }
     }
