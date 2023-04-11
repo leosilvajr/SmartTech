@@ -41,7 +41,7 @@
             // 
             // panel1
             // 
-            panel1.Size = new Size(538, 62);
+            panel1.Size = new Size(465, 62);
             // 
             // btnAdicionar
             // 
@@ -79,30 +79,30 @@
             pnlBase.Controls.Add(label2);
             pnlBase.Controls.Add(label1);
             pnlBase.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            pnlBase.Size = new Size(538, 180);
+            pnlBase.Size = new Size(465, 130);
             // 
             // pnlSuperior
             // 
-            pnlSuperior.Size = new Size(538, 39);
+            pnlSuperior.Size = new Size(465, 39);
             // 
             // btnMinimize
             // 
             btnMinimize.FlatAppearance.BorderSize = 0;
             btnMinimize.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
             btnMinimize.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
-            btnMinimize.Location = new Point(470, 0);
+            btnMinimize.Location = new Point(397, 0);
             // 
             // btnEncerrar
             // 
             btnEncerrar.FlatAppearance.BorderSize = 0;
             btnEncerrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
             btnEncerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
-            btnEncerrar.Location = new Point(504, 0);
+            btnEncerrar.Location = new Point(431, 0);
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(20, 28);
+            label1.Location = new Point(10, 12);
             label1.Name = "label1";
             label1.Size = new Size(96, 17);
             label1.TabIndex = 0;
@@ -111,7 +111,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(20, 87);
+            label2.Location = new Point(10, 67);
             label2.Name = "label2";
             label2.Size = new Size(44, 17);
             label2.TabIndex = 2;
@@ -120,7 +120,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(429, 87);
+            label3.Location = new Point(381, 67);
             label3.Name = "label3";
             label3.Size = new Size(48, 17);
             label3.TabIndex = 4;
@@ -130,7 +130,8 @@
             // 
             txtCodigo.BorderStyle = BorderStyle.FixedSingle;
             txtCodigo.Enabled = false;
-            txtCodigo.Location = new Point(20, 48);
+            txtCodigo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCodigo.Location = new Point(10, 32);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(100, 25);
             txtCodigo.TabIndex = 5;
@@ -138,15 +139,19 @@
             // txtNome
             // 
             txtNome.BorderStyle = BorderStyle.FixedSingle;
-            txtNome.Location = new Point(20, 107);
+            txtNome.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNome.Location = new Point(10, 87);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(365, 25);
             txtNome.TabIndex = 6;
             // 
             // cboEstado
             // 
+            cboEstado.DropDownHeight = 90;
+            cboEstado.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             cboEstado.FormattingEnabled = true;
-            cboEstado.Location = new Point(429, 107);
+            cboEstado.IntegralHeight = false;
+            cboEstado.Location = new Point(381, 87);
             cboEstado.Name = "cboEstado";
             cboEstado.Size = new Size(75, 25);
             cboEstado.TabIndex = 7;
@@ -155,7 +160,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(542, 283);
+            ClientSize = new Size(469, 233);
             Name = "frmCadMunicipios";
             Text = "frmCadMunicipios";
             panel1.ResumeLayout(false);

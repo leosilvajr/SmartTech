@@ -147,10 +147,10 @@
 
         protected Panel pnlSuperior;
         protected Button btnMinimize;
-        protected Button btnEncerrar;
         private Panel pnlEsquerdo;
         private Panel pnlDireito;
         private Panel pnlBaixo;
         protected Label lblTituloFormulario;
+        protected Button btnEncerrar;
     }
 }

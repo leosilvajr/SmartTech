@@ -11,6 +11,7 @@ namespace SmartTech_Funcoes.Componentes
         public TextBoxEdit()
         {
             this.BorderStyle = BorderStyle.FixedSingle;
+            this.Font = new Font("Segoe UI", 10, FontStyle.Regular);
         }
         protected override void OnKeyPress(KeyPressEventArgs e)
         {

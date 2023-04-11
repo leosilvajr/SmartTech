@@ -62,8 +62,8 @@
             // btnEncerrar
             // 
             btnEncerrar.FlatAppearance.BorderSize = 0;
-            btnEncerrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
-            btnEncerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
+            btnEncerrar.FlatAppearance.MouseDownBackColor = Color.Red;
+            btnEncerrar.FlatAppearance.MouseOverBackColor = Color.Red;
             btnEncerrar.Location = new Point(730, 0);
             // 
             // lblTituloFormulario
@@ -172,6 +172,7 @@
             // txtConsulta
             // 
             txtConsulta.BorderStyle = BorderStyle.FixedSingle;
+            txtConsulta.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtConsulta.Location = new Point(8, 45);
             txtConsulta.Name = "txtConsulta";
             txtConsulta.Size = new Size(752, 25);

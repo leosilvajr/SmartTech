@@ -58,8 +58,8 @@
             // btnEncerrar
             // 
             btnEncerrar.FlatAppearance.BorderSize = 0;
-            btnEncerrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
-            btnEncerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
+            btnEncerrar.FlatAppearance.MouseDownBackColor = Color.Red;
+            btnEncerrar.FlatAppearance.MouseOverBackColor = Color.Red;
             btnEncerrar.Location = new Point(762, 0);
             // 
             // lblTituloFormulario

@@ -288,5 +288,10 @@ namespace SmartTech
             Util.AbreForm(pnlBase, municipio);
         }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            frmCadClientes cliente = new frmCadClientes();
+            Util.AbreForm(pnlBase, cliente);
+        }
     }
 }

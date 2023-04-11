@@ -31,29 +31,36 @@
             pnlSuperior.SuspendLayout();
             SuspendLayout();
             // 
-            // pnlSuperior
+            // cboPesquisaPor
             // 
-            pnlSuperior.Size = new Size(763, 34);
+            cboPesquisaPor.Size = new Size(244, 25);
+            // 
+            // cboFiltro
+            // 
+            cboFiltro.Size = new Size(244, 25);
+            // 
+            // txtConsulta
+            // 
+            txtConsulta.Location = new Point(8, 43);
             // 
             // btnMinimize
             // 
             btnMinimize.FlatAppearance.BorderSize = 0;
             btnMinimize.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
             btnMinimize.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
-            btnMinimize.Location = new Point(695, 0);
             // 
             // btnEncerrar
             // 
             btnEncerrar.FlatAppearance.BorderSize = 0;
             btnEncerrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
             btnEncerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
-            btnEncerrar.Location = new Point(729, 0);
+            // 
             // 
             // frmConsultaMunicipio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(767, 450);
+            ClientSize = new Size(768, 469);
             Name = "frmConsultaMunicipio";
             Text = "frmConsultaMunicipio";
             Load += frmConsultaMunicipio_Load;

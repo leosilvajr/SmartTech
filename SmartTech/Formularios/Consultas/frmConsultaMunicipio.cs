@@ -71,7 +71,7 @@ namespace SmartTech.Formularios.Consultas
             // Obtenha uma lista de todos os municípios
             lista = dao.ObterTodos();
             toolStripRegistros.Text = lista.Count().ToString();
-            
+
 
             // Atribua a lista de municípios ao DataSource do DataGridView
             dgvConsulta.DataSource = lista;

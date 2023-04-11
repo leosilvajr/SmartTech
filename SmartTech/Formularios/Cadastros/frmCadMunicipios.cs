@@ -25,7 +25,7 @@ namespace SmartTech.Formularios.Cadastros
             cboEstado.ValueMember = "Value";
             cboEstado.PreencheComboEstadosBrasil();
             cboEstado.SelectedIndex = -1;
-            
+
         }
 
         public override void MontaTela()

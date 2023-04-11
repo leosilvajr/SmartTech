@@ -11,8 +11,10 @@ namespace SmartTech_Funcoes.Componentes
         public ComboBoxEdit()
         {
             //Mostra apenas 5
+
             this.DropDownHeight = ItemHeight * 5;
-            
+            this.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+
         }
         protected override void OnKeyPress(KeyPressEventArgs e)
         {

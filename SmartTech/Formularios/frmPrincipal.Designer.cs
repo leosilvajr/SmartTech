@@ -505,6 +505,7 @@
             button11.Text = "            Cliente";
             button11.TextAlign = ContentAlignment.MiddleLeft;
             button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // btnCadastros
             // 
@@ -637,8 +638,8 @@
             // 
             btnEncerrar.Dock = DockStyle.Right;
             btnEncerrar.FlatAppearance.BorderSize = 0;
-            btnEncerrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(34, 36, 38);
-            btnEncerrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
+            btnEncerrar.FlatAppearance.MouseDownBackColor = Color.Red;
+            btnEncerrar.FlatAppearance.MouseOverBackColor = Color.Red;
             btnEncerrar.FlatStyle = FlatStyle.Flat;
             btnEncerrar.ForeColor = Color.White;
             btnEncerrar.Image = Properties.Resources.clos1;
