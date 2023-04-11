@@ -22,14 +22,23 @@ namespace SmartTech.Formularios.Base
 
         public override void MontaTela()
         {
-            //LimpaControles(this.Controls);
             base.MontaTela();
-            //IniciarFocusControle(this.Controls);
-            //Status = Enums.AcaoTelaStatus.Navegando;
-
         }
+
+        private void LimparCamposTextBox(Panel panel)
+        {
+            foreach (Control controle in panel.Controls)
+            {
+                if (controle is TextBox)
+                {
+                    ((TextBox)controle).Text = "";
+                }
+            }
+        }
+
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            LimparCamposTextBox(pnlBase);
             btnAdicionar.Enabled = false;
             btnCancelar.Enabled = true;
             btnSalvar.Enabled = true;

@@ -21,7 +21,6 @@ namespace SmartTech.Formularios.Cadastros
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Municipio municipio = new Municipio();
-            //municipio.Codigo = Convert.ToInt32(txtCodigo.Text);
             municipio.Nome = txtNome.Text;
             municipio.Estado = txtEstado.Text;
 
@@ -35,13 +34,14 @@ namespace SmartTech.Formularios.Cadastros
             try
             {
                 municipio = entidade;
-                MontaTela();
+                txtCodigo.Text = municipio.Codigo.ToString();
+                txtNome.Text = municipio.Nome;
+                txtEstado.Text = municipio.Estado;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro");
-                //Mensagem.MostraErro(ex.Message);
             }
         }
         private void btnProcurar_Click(object sender, EventArgs e)
