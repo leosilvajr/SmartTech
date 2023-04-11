@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SmartTech_Funcoes.Componentes
 {
-    public class TextBoxEdit : TextBox
+    public class ComboBoxEdit : ComboBox
     {
-        public TextBoxEdit()
+        public ComboBoxEdit()
         {
-            this.BorderStyle = BorderStyle.FixedSingle;
+ 
         }
         protected override void OnKeyPress(KeyPressEventArgs e)
         {

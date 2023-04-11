@@ -33,7 +33,7 @@
             label3 = new Label();
             txtCodigo = new SmartTech_Funcoes.Componentes.TextBoxEdit();
             txtNome = new SmartTech_Funcoes.Componentes.TextBoxEdit();
-            txtEstado = new SmartTech_Funcoes.Componentes.TextBoxEdit();
+            cboEstado = new SmartTech_Funcoes.Componentes.ComboBoxEdit();
             panel1.SuspendLayout();
             pnlBase.SuspendLayout();
             pnlSuperior.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             // pnlBase
             // 
-            pnlBase.Controls.Add(txtEstado);
+            pnlBase.Controls.Add(cboEstado);
             pnlBase.Controls.Add(txtNome);
             pnlBase.Controls.Add(txtCodigo);
             pnlBase.Controls.Add(label3);
@@ -120,7 +120,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(420, 87);
+            label3.Location = new Point(429, 87);
             label3.Name = "label3";
             label3.Size = new Size(48, 17);
             label3.TabIndex = 4;
@@ -143,13 +143,13 @@
             txtNome.Size = new Size(365, 25);
             txtNome.TabIndex = 6;
             // 
-            // txtEstado
+            // cboEstado
             // 
-            txtEstado.BorderStyle = BorderStyle.FixedSingle;
-            txtEstado.Location = new Point(420, 107);
-            txtEstado.Name = "txtEstado";
-            txtEstado.Size = new Size(100, 25);
-            txtEstado.TabIndex = 7;
+            cboEstado.FormattingEnabled = true;
+            cboEstado.Location = new Point(429, 107);
+            cboEstado.Name = "cboEstado";
+            cboEstado.Size = new Size(75, 25);
+            cboEstado.TabIndex = 7;
             // 
             // frmCadMunicipios
             // 
@@ -173,5 +173,6 @@
         private SmartTech_Funcoes.Componentes.TextBoxEdit txtEstado;
         private SmartTech_Funcoes.Componentes.TextBoxEdit txtNome;
         private SmartTech_Funcoes.Componentes.TextBoxEdit txtCodigo;
+        private SmartTech_Funcoes.Componentes.ComboBoxEdit cboEstado;
     }
 }

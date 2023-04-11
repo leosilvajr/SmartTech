@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtConsulta = new TextBox();
             cboPesquisaPor = new ComboBox();
             label1 = new Label();
             label2 = new Label();
@@ -40,6 +39,7 @@
             radioInicia = new RadioButton();
             radioContenha = new RadioButton();
             dgvConsulta = new DataGridView();
+            txtConsulta = new SmartTech_Funcoes.Componentes.TextBoxEdit();
             pnlSuperior.SuspendLayout();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -69,16 +69,6 @@
             // lblTituloFormulario
             // 
             lblTituloFormulario.Location = new Point(6, 11);
-            // 
-            // txtConsulta
-            // 
-            txtConsulta.BorderStyle = BorderStyle.FixedSingle;
-            txtConsulta.Location = new Point(6, 49);
-            txtConsulta.Name = "txtConsulta";
-            txtConsulta.Size = new Size(754, 25);
-            txtConsulta.TabIndex = 0;
-            txtConsulta.TextChanged += txtConsulta_TextChanged;
-            txtConsulta.KeyDown += txtConsulta_KeyDown;
             // 
             // cboPesquisaPor
             // 
@@ -179,11 +169,20 @@
             dgvConsulta.TabIndex = 11;
             dgvConsulta.DoubleClick += dgvConsulta_DoubleClick;
             // 
+            // txtConsulta
+            // 
+            txtConsulta.BorderStyle = BorderStyle.FixedSingle;
+            txtConsulta.Location = new Point(8, 45);
+            txtConsulta.Name = "txtConsulta";
+            txtConsulta.Size = new Size(752, 25);
+            txtConsulta.TabIndex = 15;
+            // 
             // frmBaseConsulta
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(768, 510);
+            Controls.Add(txtConsulta);
             Controls.Add(radioContenha);
             Controls.Add(radioInicia);
             Controls.Add(panel1);
@@ -192,13 +191,11 @@
             Controls.Add(cboFiltro);
             Controls.Add(label1);
             Controls.Add(cboPesquisaPor);
-            Controls.Add(txtConsulta);
             Name = "frmBaseConsulta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "r";
             Load += frmBaseConsulta_Load;
             KeyDown += frmBaseConsulta_KeyDown;
-            Controls.SetChildIndex(txtConsulta, 0);
             Controls.SetChildIndex(cboPesquisaPor, 0);
             Controls.SetChildIndex(label1, 0);
             Controls.SetChildIndex(cboFiltro, 0);
@@ -208,6 +205,7 @@
             Controls.SetChildIndex(radioInicia, 0);
             Controls.SetChildIndex(radioContenha, 0);
             Controls.SetChildIndex(pnlSuperior, 0);
+            Controls.SetChildIndex(txtConsulta, 0);
             pnlSuperior.ResumeLayout(false);
             pnlSuperior.PerformLayout();
             panel1.ResumeLayout(false);
@@ -225,12 +223,12 @@
         private Panel panel1;
         protected RadioButton radioInicia;
         protected RadioButton radioContenha;
-        protected TextBox txtConsulta;
         protected ComboBox cboPesquisaPor;
         protected ComboBox cboFiltro;
         protected ToolStrip toolStrip1;
         protected DataGridView dgvConsulta;
         protected ToolStripLabel toolStripLabel1;
         protected ToolStripLabel toolStripRegistros;
+        protected SmartTech_Funcoes.Componentes.TextBoxEdit txtConsulta;
     }
 }

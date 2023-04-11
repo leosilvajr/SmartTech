@@ -16,6 +16,16 @@ namespace SmartTech.Formularios.Cadastros
             InitializeComponent();
             municipio = new Municipio();
             lblTituloFormulario.Text = "Cadastro de Municípios";
+            MontaComboEstado();
+        }
+
+        private void MontaComboEstado()
+        {
+            cboEstado.DisplayMember = "Descricao";
+            cboEstado.ValueMember = "Value";
+            cboEstado.PreencheComboEstadosBrasil();
+            cboEstado.SelectedIndex = -1;
+            
         }
 
         public override void MontaTela()
@@ -31,7 +41,7 @@ namespace SmartTech.Formularios.Cadastros
             {
                 // Atualiza os dados do registro existente
                 municipioExistente.Nome = txtNome.Text;
-                municipioExistente.Estado = txtEstado.Text;
+                municipioExistente.Estado = cboEstado.Text;
 
                 dao.Atualizar(municipioExistente);
 
@@ -44,7 +54,7 @@ namespace SmartTech.Formularios.Cadastros
                 // Cria um novo registro
                 Municipio novoMunicipio = new Municipio();
                 novoMunicipio.Nome = txtNome.Text;
-                novoMunicipio.Estado = txtEstado.Text;
+                novoMunicipio.Estado = cboEstado.Text;
 
                 dao.Inserir(novoMunicipio);
 
@@ -60,7 +70,7 @@ namespace SmartTech.Formularios.Cadastros
                 municipio = entidade;
                 txtCodigo.Text = municipio.Codigo.ToString();
                 txtNome.Text = municipio.Nome;
-                txtEstado.Text = municipio.Estado;
+                cboEstado.Text = municipio.Estado;
 
             }
             catch (Exception ex)
