@@ -9,6 +9,8 @@ namespace SmartTech_Funcoes.Entidades
     public class Cliente
     {
         public int Codigo { get; set; }
+
+        public string Pessoa { get; set; }
         public string NomeRazaoSocial { get; set; }
         public byte[] Foto { get; set; }
 

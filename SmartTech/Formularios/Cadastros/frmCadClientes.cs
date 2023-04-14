@@ -17,7 +17,21 @@ namespace SmartTech.Formularios.Cadastros
         {
             InitializeComponent();
             lblTituloFormulario.Text = "Cadastro de Clientes";
-            
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void pnlBase_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
