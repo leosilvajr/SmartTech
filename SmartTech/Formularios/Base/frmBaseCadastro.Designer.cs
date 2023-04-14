@@ -55,6 +55,10 @@
             btnMinimize.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
             btnMinimize.Location = new Point(728, 0);
             // 
+            // lblTituloFormulario
+            // 
+            lblTituloFormulario.Location = new Point(6, 11);
+            // 
             // btnEncerrar
             // 
             btnEncerrar.FlatAppearance.BorderSize = 0;
@@ -62,13 +66,9 @@
             btnEncerrar.FlatAppearance.MouseOverBackColor = Color.Red;
             btnEncerrar.Location = new Point(762, 0);
             // 
-            // lblTituloFormulario
-            // 
-            lblTituloFormulario.Location = new Point(6, 11);
-            // 
             // panel1
             // 
-            panel1.BackColor = Color.Wheat;
+            panel1.BackColor = Color.LightSteelBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnProcurar);
             panel1.Controls.Add(btnExcluir);
@@ -172,6 +172,7 @@
             // 
             // pnlBase
             // 
+            pnlBase.BackColor = Color.Lavender;
             pnlBase.Dock = DockStyle.Fill;
             pnlBase.Location = new Point(2, 101);
             pnlBase.Name = "pnlBase";

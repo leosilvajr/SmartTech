@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             btnSair = new Button();
             panelConfiguracoes = new Panel();
@@ -65,7 +66,15 @@
             btnMinimize = new Button();
             btnMaximize = new Button();
             btnEncerrar = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            cADASTROToolStripMenuItem = new ToolStripMenuItem();
+            tESTEToolStripMenuItem = new ToolStripMenuItem();
             pnlBase = new Panel();
+            menuStrip1 = new MenuStrip();
+            cadastrosToolStripMenuItem = new ToolStripMenuItem();
+            clientesToolStripMenuItem = new ToolStripMenuItem();
+            produtosToolStripMenuItem = new ToolStripMenuItem();
+            serviçosToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             panelConfiguracoes.SuspendLayout();
             panelUltilitarios.SuspendLayout();
@@ -77,6 +86,7 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlSuperior.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -416,7 +426,7 @@
             button5.Name = "button5";
             button5.Size = new Size(250, 25);
             button5.TabIndex = 7;
-            button5.Text = "            Cliente";
+            button5.Text = "            Compras";
             button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = true;
             // 
@@ -651,14 +661,67 @@
             btnEncerrar.UseVisualStyleBackColor = true;
             btnEncerrar.Click += btnEncerrar_Click;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // cADASTROToolStripMenuItem
+            // 
+            cADASTROToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { tESTEToolStripMenuItem });
+            cADASTROToolStripMenuItem.Name = "cADASTROToolStripMenuItem";
+            cADASTROToolStripMenuItem.Size = new Size(79, 20);
+            cADASTROToolStripMenuItem.Text = "CADASTRO";
+            // 
+            // tESTEToolStripMenuItem
+            // 
+            tESTEToolStripMenuItem.Name = "tESTEToolStripMenuItem";
+            tESTEToolStripMenuItem.Size = new Size(104, 22);
+            tESTEToolStripMenuItem.Text = "TESTE";
+            // 
             // pnlBase
             // 
-            pnlBase.BackColor = Color.Cornsilk;
+            pnlBase.BackColor = Color.Lavender;
             pnlBase.Dock = DockStyle.Fill;
             pnlBase.Location = new Point(250, 34);
             pnlBase.Name = "pnlBase";
             pnlBase.Size = new Size(982, 815);
             pnlBase.TabIndex = 2;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem });
+            menuStrip1.Location = new Point(250, 34);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(982, 24);
+            menuStrip1.TabIndex = 3;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // cadastrosToolStripMenuItem
+            // 
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem, produtosToolStripMenuItem, serviçosToolStripMenuItem });
+            cadastrosToolStripMenuItem.Image = Properties.Resources.add;
+            cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            cadastrosToolStripMenuItem.Size = new Size(87, 20);
+            cadastrosToolStripMenuItem.Text = "Cadastros";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            clientesToolStripMenuItem.Size = new Size(180, 22);
+            clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // produtosToolStripMenuItem
+            // 
+            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Text = "Produtos";
+            // 
+            // serviçosToolStripMenuItem
+            // 
+            serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
+            serviçosToolStripMenuItem.Size = new Size(180, 22);
+            serviçosToolStripMenuItem.Text = "Serviços";
             // 
             // frmPrincipal
             // 
@@ -666,6 +729,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 25, 27);
             ClientSize = new Size(1232, 849);
+            Controls.Add(menuStrip1);
             Controls.Add(pnlBase);
             Controls.Add(pnlSuperior);
             Controls.Add(panel1);
@@ -687,7 +751,10 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlSuperior.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -728,7 +795,15 @@
         private Button btnEncerrar;
         private Button btnMinimize;
         private Button btnMaximize;
-        private Panel pnlBase;
         private Label label2;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem cADASTROToolStripMenuItem;
+        private ToolStripMenuItem tESTEToolStripMenuItem;
+        private Panel pnlBase;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem cadastrosToolStripMenuItem;
+        private ToolStripMenuItem clientesToolStripMenuItem;
+        private ToolStripMenuItem produtosToolStripMenuItem;
+        private ToolStripMenuItem serviçosToolStripMenuItem;
     }
 }

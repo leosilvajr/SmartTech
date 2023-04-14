@@ -59,16 +59,16 @@
             btnMinimize.FlatAppearance.MouseOverBackColor = Color.FromArgb(34, 36, 38);
             btnMinimize.Location = new Point(696, 0);
             // 
+            // lblTituloFormulario
+            // 
+            lblTituloFormulario.Location = new Point(6, 11);
+            // 
             // btnEncerrar
             // 
             btnEncerrar.FlatAppearance.BorderSize = 0;
             btnEncerrar.FlatAppearance.MouseDownBackColor = Color.Red;
             btnEncerrar.FlatAppearance.MouseOverBackColor = Color.Red;
             btnEncerrar.Location = new Point(730, 0);
-            // 
-            // lblTituloFormulario
-            // 
-            lblTituloFormulario.Location = new Point(6, 11);
             // 
             // cboPesquisaPor
             // 
@@ -184,6 +184,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Lavender;
             ClientSize = new Size(768, 510);
             Controls.Add(txtConsulta);
             Controls.Add(radioContenha);

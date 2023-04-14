@@ -30,7 +30,7 @@ namespace SmartTech
         public frmPrincipal()
         {
             InitializeComponent();
-            this.Size = new Size(1100, 700);
+            this.Size = new Size(1500, 800);
             this.FormBorderStyle = FormBorderStyle.None;
             this.MinimumSize = new Size(600, 400);
             tooglePanels();
@@ -292,6 +292,11 @@ namespace SmartTech
         {
             frmCadClientes cliente = new frmCadClientes();
             Util.AbreForm(pnlBase, cliente);
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
