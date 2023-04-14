@@ -293,10 +293,10 @@ namespace SmartTech
             frmCadClientes cliente = new frmCadClientes();
             Util.AbreForm(pnlBase, cliente);
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmCadClientes cliente = new frmCadClientes();
+            Util.AbreForm(pnlBase, cliente);
         }
     }
 }
