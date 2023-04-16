@@ -16,9 +16,9 @@ namespace SmartTech_Funcoes.DAO
         {
             using (SqlConnection conn = Conexao.ObterConexao())
             using (SqlCommand cmd = new SqlCommand("INSERT INTO CLIENTE (NOME_RAZAOSOCIAL, CPF_CNPJ, IE_RG," +
-                " APELIDO_FANTASIA, COD_MUNICIPIO, ENDERECO, NUMERO, BAIRRO, TELEFONE, CELULAR, EMAIL, Foto)" +
+                " APELIDO_FANTASIA, COD_MUNICIPIO, ENDERECO, NUMERO, BAIRRO, TELEFONE, CELULAR, EMAIL, Foto,PESSOA, CEP)" +
                 " VALUES (@NomeRazaoSocial, @CpfCnpj, @IeRg, @ApelidoFantasia, @CodMunicipio," +
-                " @Endereco, @Numero, @Bairro, @Telefone, @Celular, @Email, @Foto)", conn))
+                " @Endereco, @Numero, @Bairro, @Telefone, @Celular, @Email, @Foto,@Pessoa, @Cep)", conn))
             {
                 cmd.Parameters.AddWithValue("@NomeRazaoSocial", cliente.NomeRazaoSocial);
                 cmd.Parameters.AddWithValue("@CpfCnpj", cliente.CpfCnpj);
@@ -32,6 +32,8 @@ namespace SmartTech_Funcoes.DAO
                 cmd.Parameters.AddWithValue("@Celular", cliente.Celular);
                 cmd.Parameters.AddWithValue("@Email", cliente.Email);
                 cmd.Parameters.AddWithValue("@Foto", cliente.Foto);
+                cmd.Parameters.AddWithValue("@Pessoa", cliente.Pessoa);
+                cmd.Parameters.AddWithValue("@Cep", cliente.Cep);
 
                 try
                 {
@@ -50,7 +52,7 @@ namespace SmartTech_Funcoes.DAO
             using (SqlCommand cmd = new SqlCommand("UPDATE Cliente SET NOME_RAZAOSOCIAL = @Nome, CPF_CNPJ = @CpfCnpj," +
                 " IE_RG = @IeRg, APELIDO_FANTASIA = @ApelidoFantasia, COD_MUNICIPIO = @CodMunicipio," +
                 " ENDERECO = @Endereco, NUMERO = @Numero, BAIRRO = @Bairro, TELEFONE = @Telefone," +
-                " CELULAR = @Celular, EMAIL = @Email, FOTO = @Foto WHERE COD_CLIENTE = @Codigo", conn))
+                " CELULAR = @Celular, EMAIL = @Email, FOTO = @Foto, PESSOA = @Pessoa, CEP = @Cep WHERE COD_CLIENTE = @Codigo", conn))
             {
                 cmd.Parameters.AddWithValue("@Nome", cliente.NomeRazaoSocial);
                 cmd.Parameters.AddWithValue("@CpfCnpj", cliente.CpfCnpj);
@@ -64,8 +66,10 @@ namespace SmartTech_Funcoes.DAO
                 cmd.Parameters.AddWithValue("@Celular", cliente.Celular);
                 cmd.Parameters.AddWithValue("@Email", cliente.Email);
                 cmd.Parameters.AddWithValue("@Foto", cliente.Foto);
+                cmd.Parameters.AddWithValue("@Cep", cliente.Cep);
+                cmd.Parameters.AddWithValue("@Pessoa", cliente.Pessoa);
                 cmd.Parameters.AddWithValue("@Codigo", cliente.Codigo);
-
+                
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -132,6 +136,8 @@ namespace SmartTech_Funcoes.DAO
                             //ImageConverter converter = new ImageConverter();
                             //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
                         }
+                        cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
+                        cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
 
 
                         clientes.Add(cliente);
@@ -179,6 +185,8 @@ namespace SmartTech_Funcoes.DAO
                             //ImageConverter converter = new ImageConverter();
                             //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
                         }
+                        cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
+                        cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
                     }
                 }
             }
@@ -223,7 +231,8 @@ namespace SmartTech_Funcoes.DAO
                             //ImageConverter converter = new ImageConverter();
                             //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
                         }
-
+                        cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
+                        cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
                         clientes.Add(cliente);
                     }
                 }
