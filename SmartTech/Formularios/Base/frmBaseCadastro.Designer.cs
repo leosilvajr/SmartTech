@@ -39,6 +39,7 @@
             btnAdicionar = new Button();
             toolTip1 = new ToolTip(components);
             pnlBase = new Panel();
+            pnlRodape = new SmartTech_Funcoes.Componentes.PanelEdit();
             pnlSuperior.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -179,11 +180,22 @@
             pnlBase.Size = new Size(796, 407);
             pnlBase.TabIndex = 7;
             // 
+            // pnlRodape
+            // 
+            pnlRodape.BackColor = Color.FromArgb(25, 25, 27);
+            pnlRodape.Dock = DockStyle.Bottom;
+            pnlRodape.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            pnlRodape.Location = new Point(2, 489);
+            pnlRodape.Name = "pnlRodape";
+            pnlRodape.Size = new Size(796, 19);
+            pnlRodape.TabIndex = 8;
+            // 
             // frmBaseCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 510);
+            Controls.Add(pnlRodape);
             Controls.Add(pnlBase);
             Controls.Add(panel1);
             Name = "frmBaseCadastro";
@@ -193,6 +205,7 @@
             Controls.SetChildIndex(pnlSuperior, 0);
             Controls.SetChildIndex(panel1, 0);
             Controls.SetChildIndex(pnlBase, 0);
+            Controls.SetChildIndex(pnlRodape, 0);
             pnlSuperior.ResumeLayout(false);
             pnlSuperior.PerformLayout();
             panel1.ResumeLayout(false);
@@ -211,5 +224,6 @@
         private Button button1;
         private ToolTip toolTip1;
         protected Panel pnlBase;
+        protected SmartTech_Funcoes.Componentes.PanelEdit pnlRodape;
     }
 }

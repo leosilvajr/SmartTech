@@ -32,7 +32,6 @@
             txtCodigo = new SmartTech_Funcoes.Componentes.TextBoxEdit();
             label2 = new Label();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
             mskCpfCnpj = new SmartTech_Funcoes.Componentes.MaskedTextBoxEdit();
             label3 = new Label();
             txtRgIe = new SmartTech_Funcoes.Componentes.TextBoxEdit();
@@ -54,18 +53,16 @@
             txtBairro = new SmartTech_Funcoes.Componentes.TextBoxEdit();
             label14 = new Label();
             label15 = new Label();
-            mskCelular = new SmartTech_Funcoes.Componentes.MaskedTextBoxEdit();
+            mkbCelular = new SmartTech_Funcoes.Componentes.MaskedTextBoxEdit();
             label16 = new Label();
-            mskTelefone = new SmartTech_Funcoes.Componentes.MaskedTextBoxEdit();
+            mkbTelefone = new SmartTech_Funcoes.Componentes.MaskedTextBoxEdit();
             txtEmail = new SmartTech_Funcoes.Componentes.TextBoxEdit();
             label17 = new Label();
             label10 = new Label();
-            maskedTextBoxEdit1 = new SmartTech_Funcoes.Componentes.MaskedTextBoxEdit();
-            btnAnexarImagem = new SmartTech_Funcoes.Componentes.ButtonEdit();
+            mkbCep = new SmartTech_Funcoes.Componentes.MaskedTextBoxEdit();
             panel1.SuspendLayout();
             pnlBase.SuspendLayout();
             pnlSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -91,6 +88,7 @@
             // btnSalvar
             // 
             btnSalvar.FlatAppearance.BorderSize = 0;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnCancelar
             // 
@@ -98,15 +96,14 @@
             // 
             // pnlBase
             // 
-            pnlBase.Controls.Add(btnAnexarImagem);
             pnlBase.Controls.Add(label10);
-            pnlBase.Controls.Add(maskedTextBoxEdit1);
+            pnlBase.Controls.Add(mkbCep);
             pnlBase.Controls.Add(txtEmail);
             pnlBase.Controls.Add(label17);
             pnlBase.Controls.Add(label16);
-            pnlBase.Controls.Add(mskTelefone);
+            pnlBase.Controls.Add(mkbTelefone);
             pnlBase.Controls.Add(label15);
-            pnlBase.Controls.Add(mskCelular);
+            pnlBase.Controls.Add(mkbCelular);
             pnlBase.Controls.Add(txtBairro);
             pnlBase.Controls.Add(label14);
             pnlBase.Controls.Add(txtNumero);
@@ -127,14 +124,17 @@
             pnlBase.Controls.Add(label4);
             pnlBase.Controls.Add(label3);
             pnlBase.Controls.Add(mskCpfCnpj);
-            pnlBase.Controls.Add(pictureBox1);
             pnlBase.Controls.Add(txtNome);
             pnlBase.Controls.Add(txtCodigo);
             pnlBase.Controls.Add(label2);
             pnlBase.Controls.Add(label1);
             pnlBase.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            pnlBase.Size = new Size(851, 320);
-            pnlBase.Paint += pnlBase_Paint;
+            pnlBase.Size = new Size(851, 344);
+            // 
+            // pnlRodape
+            // 
+            pnlRodape.Location = new Point(2, 426);
+            pnlRodape.Size = new Size(851, 19);
             // 
             // pnlSuperior
             // 
@@ -162,7 +162,6 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(547, 25);
             txtNome.TabIndex = 10;
-            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // txtCodigo
             // 
@@ -183,7 +182,6 @@
             label2.Size = new Size(127, 17);
             label2.TabIndex = 8;
             label2.Text = "Nome/Razão Social";
-            label2.Click += label2_Click;
             // 
             // label1
             // 
@@ -194,15 +192,6 @@
             label1.Size = new Size(83, 17);
             label1.TabIndex = 7;
             label1.Text = "Cód. Cliente";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(721, 22);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(112, 117);
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
             // 
             // mskCpfCnpj
             // 
@@ -274,6 +263,7 @@
             cboPessoa.Name = "cboPessoa";
             cboPessoa.Size = new Size(121, 25);
             cboPessoa.TabIndex = 18;
+            cboPessoa.SelectedIndexChanged += cboPessoa_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -411,52 +401,52 @@
             label15.TabIndex = 33;
             label15.Text = "Celular";
             // 
-            // mskCelular
+            // mkbCelular
             // 
-            mskCelular.BorderStyle = BorderStyle.FixedSingle;
-            mskCelular.CELULAR = true;
-            mskCelular.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            mskCelular.Location = new Point(155, 271);
-            mskCelular.Mask = "(00) 00000-0000";
-            mskCelular.Name = "mskCelular";
-            mskCelular.Size = new Size(99, 25);
-            mskCelular.TabIndex = 32;
+            mkbCelular.BorderStyle = BorderStyle.FixedSingle;
+            mkbCelular.CELULAR = true;
+            mkbCelular.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            mkbCelular.Location = new Point(155, 271);
+            mkbCelular.Mask = "(00) 00000-0000";
+            mkbCelular.Name = "mkbCelular";
+            mkbCelular.Size = new Size(99, 25);
+            mkbCelular.TabIndex = 32;
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(271, 273);
+            label16.Location = new Point(271, 275);
             label16.Name = "label16";
             label16.Size = new Size(61, 17);
             label16.TabIndex = 35;
             label16.Text = "Telefone";
             // 
-            // mskTelefone
+            // mkbTelefone
             // 
-            mskTelefone.BorderStyle = BorderStyle.FixedSingle;
-            mskTelefone.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            mskTelefone.Location = new Point(338, 271);
-            mskTelefone.Mask = "(00)0000-0000";
-            mskTelefone.Name = "mskTelefone";
-            mskTelefone.Size = new Size(109, 25);
-            mskTelefone.TabIndex = 34;
-            mskTelefone.TELEFONE = true;
+            mkbTelefone.BorderStyle = BorderStyle.FixedSingle;
+            mkbTelefone.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            mkbTelefone.Location = new Point(338, 271);
+            mkbTelefone.Mask = "(00)0000-0000";
+            mkbTelefone.Name = "mkbTelefone";
+            mkbTelefone.Size = new Size(109, 25);
+            mkbTelefone.TabIndex = 34;
+            mkbTelefone.TELEFONE = true;
             // 
             // txtEmail
             // 
             txtEmail.BorderStyle = BorderStyle.FixedSingle;
             txtEmail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtEmail.Location = new Point(550, 271);
+            txtEmail.Location = new Point(564, 271);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(283, 25);
+            txtEmail.Size = new Size(269, 25);
             txtEmail.TabIndex = 37;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.Location = new Point(463, 279);
+            label17.Location = new Point(511, 275);
             label17.Name = "label17";
             label17.Size = new Size(47, 17);
             label17.TabIndex = 36;
@@ -472,33 +462,22 @@
             label10.TabIndex = 39;
             label10.Text = "CEP";
             // 
-            // maskedTextBoxEdit1
+            // mkbCep
             // 
-            maskedTextBoxEdit1.BorderStyle = BorderStyle.FixedSingle;
-            maskedTextBoxEdit1.CEP = true;
-            maskedTextBoxEdit1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            maskedTextBoxEdit1.Location = new Point(735, 209);
-            maskedTextBoxEdit1.Mask = "00000-000";
-            maskedTextBoxEdit1.Name = "maskedTextBoxEdit1";
-            maskedTextBoxEdit1.Size = new Size(98, 25);
-            maskedTextBoxEdit1.TabIndex = 38;
-            // 
-            // btnAnexarImagem
-            // 
-            btnAnexarImagem.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAnexarImagem.Location = new Point(720, 145);
-            btnAnexarImagem.Name = "btnAnexarImagem";
-            btnAnexarImagem.Size = new Size(112, 26);
-            btnAnexarImagem.TabIndex = 40;
-            btnAnexarImagem.Text = "Anexar";
-            btnAnexarImagem.TextAlign = ContentAlignment.TopCenter;
-            btnAnexarImagem.UseVisualStyleBackColor = true;
+            mkbCep.BorderStyle = BorderStyle.FixedSingle;
+            mkbCep.CEP = true;
+            mkbCep.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            mkbCep.Location = new Point(735, 209);
+            mkbCep.Mask = "00000-000";
+            mkbCep.Name = "mkbCep";
+            mkbCep.Size = new Size(98, 25);
+            mkbCep.TabIndex = 38;
             // 
             // frmCadClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(855, 423);
+            ClientSize = new Size(855, 447);
             Name = "frmCadClientes";
             Text = "frmCadClientes";
             panel1.ResumeLayout(false);
@@ -506,7 +485,6 @@
             pnlBase.PerformLayout();
             pnlSuperior.ResumeLayout(false);
             pnlSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -516,7 +494,6 @@
         private SmartTech_Funcoes.Componentes.TextBoxEdit txtCodigo;
         private Label label2;
         private Label label1;
-        private PictureBox pictureBox1;
         private SmartTech_Funcoes.Componentes.TextBoxEdit txtRgIe;
         private Label label4;
         private Label label3;
@@ -540,11 +517,10 @@
         private SmartTech_Funcoes.Componentes.TextBoxEdit txtEmail;
         private Label label17;
         private Label label16;
-        private SmartTech_Funcoes.Componentes.MaskedTextBoxEdit mskTelefone;
+        private SmartTech_Funcoes.Componentes.MaskedTextBoxEdit mkbTelefone;
         private Label label15;
-        private SmartTech_Funcoes.Componentes.MaskedTextBoxEdit mskCelular;
+        private SmartTech_Funcoes.Componentes.MaskedTextBoxEdit mkbCelular;
         private Label label10;
-        private SmartTech_Funcoes.Componentes.MaskedTextBoxEdit maskedTextBoxEdit1;
-        private SmartTech_Funcoes.Componentes.ButtonEdit btnAnexarImagem;
+        private SmartTech_Funcoes.Componentes.MaskedTextBoxEdit mkbCep;
     }
 }

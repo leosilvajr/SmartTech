@@ -12,7 +12,6 @@ namespace SmartTech_Funcoes.Entidades
 
         public string Pessoa { get; set; }
         public string NomeRazaoSocial { get; set; }
-        public byte[] Foto { get; set; }
         public string CpfCnpj { get; set; }
         public string IeRg { get; set; }
         public string ApelidoFantasia { get; set; }

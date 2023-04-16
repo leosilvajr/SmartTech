@@ -1,12 +1,8 @@
 ﻿using SmartTech_Funcoes.BancoDeDados;
 using SmartTech_Funcoes.Entidades;
-using System;
-using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Resources.ResXFileRef;
+using System.Data.SqlTypes;
 
 namespace SmartTech_Funcoes.DAO
 {
@@ -16,9 +12,9 @@ namespace SmartTech_Funcoes.DAO
         {
             using (SqlConnection conn = Conexao.ObterConexao())
             using (SqlCommand cmd = new SqlCommand("INSERT INTO CLIENTE (NOME_RAZAOSOCIAL, CPF_CNPJ, IE_RG," +
-                " APELIDO_FANTASIA, COD_MUNICIPIO, ENDERECO, NUMERO, BAIRRO, TELEFONE, CELULAR, EMAIL, Foto,PESSOA, CEP)" +
+                " APELIDO_FANTASIA, COD_MUNICIPIO, ENDERECO, NUMERO, BAIRRO, TELEFONE, CELULAR, EMAIL, PESSOA, CEP)" +
                 " VALUES (@NomeRazaoSocial, @CpfCnpj, @IeRg, @ApelidoFantasia, @CodMunicipio," +
-                " @Endereco, @Numero, @Bairro, @Telefone, @Celular, @Email, @Foto,@Pessoa, @Cep)", conn))
+                " @Endereco, @Numero, @Bairro, @Telefone, @Celular, @Email, @Pessoa, @Cep)", conn))
             {
                 cmd.Parameters.AddWithValue("@NomeRazaoSocial", cliente.NomeRazaoSocial);
                 cmd.Parameters.AddWithValue("@CpfCnpj", cliente.CpfCnpj);
@@ -31,7 +27,6 @@ namespace SmartTech_Funcoes.DAO
                 cmd.Parameters.AddWithValue("@Telefone", cliente.Telefone);
                 cmd.Parameters.AddWithValue("@Celular", cliente.Celular);
                 cmd.Parameters.AddWithValue("@Email", cliente.Email);
-                cmd.Parameters.AddWithValue("@Foto", cliente.Foto);
                 cmd.Parameters.AddWithValue("@Pessoa", cliente.Pessoa);
                 cmd.Parameters.AddWithValue("@Cep", cliente.Cep);
 
@@ -52,7 +47,7 @@ namespace SmartTech_Funcoes.DAO
             using (SqlCommand cmd = new SqlCommand("UPDATE Cliente SET NOME_RAZAOSOCIAL = @Nome, CPF_CNPJ = @CpfCnpj," +
                 " IE_RG = @IeRg, APELIDO_FANTASIA = @ApelidoFantasia, COD_MUNICIPIO = @CodMunicipio," +
                 " ENDERECO = @Endereco, NUMERO = @Numero, BAIRRO = @Bairro, TELEFONE = @Telefone," +
-                " CELULAR = @Celular, EMAIL = @Email, FOTO = @Foto, PESSOA = @Pessoa, CEP = @Cep WHERE COD_CLIENTE = @Codigo", conn))
+                " CELULAR = @Celular, EMAIL = @Email, PESSOA = @Pessoa, CEP = @Cep WHERE COD_CLIENTE = @Codigo", conn))
             {
                 cmd.Parameters.AddWithValue("@Nome", cliente.NomeRazaoSocial);
                 cmd.Parameters.AddWithValue("@CpfCnpj", cliente.CpfCnpj);
@@ -65,7 +60,17 @@ namespace SmartTech_Funcoes.DAO
                 cmd.Parameters.AddWithValue("@Telefone", cliente.Telefone);
                 cmd.Parameters.AddWithValue("@Celular", cliente.Celular);
                 cmd.Parameters.AddWithValue("@Email", cliente.Email);
-                cmd.Parameters.AddWithValue("@Foto", cliente.Foto);
+                //if (cliente.Foto != null)
+                //{
+                //    SqlParameter fotoParam = new SqlParameter("@Foto", SqlDbType.VarBinary, cliente.Foto.Length);
+                //    fotoParam.Value = new SqlBinary(cliente.Foto);
+                //    cmd.Parameters.Add(fotoParam);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@Foto", DBNull.Value);
+                //}
+
                 cmd.Parameters.AddWithValue("@Cep", cliente.Cep);
                 cmd.Parameters.AddWithValue("@Pessoa", cliente.Pessoa);
                 cmd.Parameters.AddWithValue("@Codigo", cliente.Codigo);
@@ -126,16 +131,16 @@ namespace SmartTech_Funcoes.DAO
                         cliente.Celular = reader.GetString(reader.GetOrdinal("CELULAR"));
                         cliente.Email = reader.GetString(reader.GetOrdinal("EMAIL"));
 
-                        if (!reader.IsDBNull(reader.GetOrdinal("Foto")))
-                        {
-                            byte[] fotoBytes = (byte[])reader["Foto"];
-                            MemoryStream stream = new MemoryStream(fotoBytes);
-                            Image foto = Image.FromStream(stream);
-                            cliente.Foto = fotoBytes;
-                            //ou
-                            //ImageConverter converter = new ImageConverter();
-                            //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
-                        }
+                        //if (!reader.IsDBNull(reader.GetOrdinal("Foto")))
+                        //{
+                        //    byte[] fotoBytes = (byte[])reader["Foto"];
+                        //    MemoryStream stream = new MemoryStream(fotoBytes);
+                        //    Image foto = Image.FromStream(stream);
+                        //    cliente.Foto = fotoBytes;
+                        //    //ou
+                        //    //ImageConverter converter = new ImageConverter();
+                        //    //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
+                        //}
                         cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
                         cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
 
@@ -175,16 +180,16 @@ namespace SmartTech_Funcoes.DAO
                         cliente.Celular = reader.GetString(reader.GetOrdinal("CELULAR"));
                         cliente.Email = reader.GetString(reader.GetOrdinal("EMAIL"));
 
-                        if (!reader.IsDBNull(reader.GetOrdinal("Foto")))
-                        {
-                            byte[] fotoBytes = (byte[])reader["Foto"];
-                            MemoryStream stream = new MemoryStream(fotoBytes);
-                            Image foto = Image.FromStream(stream);
-                            cliente.Foto = fotoBytes;
-                            //ou
-                            //ImageConverter converter = new ImageConverter();
-                            //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
-                        }
+                        //if (!reader.IsDBNull(reader.GetOrdinal("Foto")))
+                        //{
+                        //    byte[] fotoBytes = (byte[])reader["Foto"];
+                        //    MemoryStream stream = new MemoryStream(fotoBytes);
+                        //    Image foto = Image.FromStream(stream);
+                        //    cliente.Foto = fotoBytes;
+                        //    //ou
+                        //    //ImageConverter converter = new ImageConverter();
+                        //    //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
+                        //}
                         cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
                         cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
                     }
@@ -221,16 +226,16 @@ namespace SmartTech_Funcoes.DAO
                         cliente.Celular = reader.GetString(reader.GetOrdinal("CELULAR"));
                         cliente.Email = reader.GetString(reader.GetOrdinal("EMAIL"));
 
-                        if (!reader.IsDBNull(reader.GetOrdinal("Foto")))
-                        {
-                            byte[] fotoBytes = (byte[])reader["Foto"];
-                            MemoryStream stream = new MemoryStream(fotoBytes);
-                            Image foto = Image.FromStream(stream);
-                            cliente.Foto = fotoBytes;
-                            //ou
-                            //ImageConverter converter = new ImageConverter();
-                            //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
-                        }
+                        //if (!reader.IsDBNull(reader.GetOrdinal("Foto")))
+                        //{
+                        //    byte[] fotoBytes = (byte[])reader["Foto"];
+                        //    MemoryStream stream = new MemoryStream(fotoBytes);
+                        //    Image foto = Image.FromStream(stream);
+                        //    cliente.Foto = fotoBytes;
+                        //    //ou
+                        //    //ImageConverter converter = new ImageConverter();
+                        //    //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
+                        //}
                         cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
                         cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
                         clientes.Add(cliente);

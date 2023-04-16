@@ -3,7 +3,6 @@ using SmartTech.Formularios.Consultas;
 using SmartTech_Funcoes;
 using SmartTech_Funcoes.DAO;
 using SmartTech_Funcoes.Entidades;
-using System.Windows.Forms;
 
 namespace SmartTech.Formularios.Cadastros
 {

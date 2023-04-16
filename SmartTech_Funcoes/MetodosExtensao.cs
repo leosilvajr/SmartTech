@@ -8,6 +8,35 @@ namespace SmartTech_Funcoes
 {
     public static class MetodosExtensao
     {
+        public static int? GetToIntExt(this string value)
+        {
+            int result;
+            if (!string.IsNullOrEmpty(value))
+            {
+                int.TryParse(value, out result);
+                return result;
+            }
+            else
+                return null;
+        }
+
+        public static string GetTextSemMascara(this MaskedTextBoxEdit ctrl)
+        {
+            string valor = null;
+            string newValue;
+            if (!string.IsNullOrEmpty(ctrl.Mask))
+            {
+                ctrl.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                newValue = ctrl.Text;
+                ctrl.TextMaskFormat = MaskFormat.IncludeLiterals;
+
+            }
+            else
+                newValue = new string(ctrl.Text.Where(c => Char.IsLetterOrDigit(c)).ToArray());
+
+            valor = newValue; //ctrl.Text;
+            return valor;
+        }
         public static void CentralizaForm(this Panel pnl, Form frm)
         {
             pnl.Controls.Add(frm);
@@ -80,18 +109,6 @@ namespace SmartTech_Funcoes
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static int? GetToIntExt(this string value)
-        {
-            int result;
-            if (!string.IsNullOrEmpty(value))
-            {
-                int.TryParse(value, out result);
-                return result;
-            }
-            else
-                return null;
-        }
-
 
         /// <summary>
         /// Metodo de Extensão:  trata valor de um objeto e retorna um long

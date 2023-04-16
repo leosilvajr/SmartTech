@@ -79,7 +79,7 @@
             pnlBase.Controls.Add(label2);
             pnlBase.Controls.Add(label1);
             pnlBase.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            pnlBase.Size = new Size(517, 130);
+            pnlBase.Size = new Size(517, 152);
             // 
             // pnlSuperior
             // 
@@ -163,7 +163,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(521, 233);
+            ClientSize = new Size(521, 255);
             Name = "frmCadMunicipios";
             Text = "frmCadMunicipios";
             panel1.ResumeLayout(false);

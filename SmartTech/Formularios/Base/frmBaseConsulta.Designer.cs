@@ -109,7 +109,7 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(toolStrip1);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(2, 480);
+            panel1.Location = new Point(2, 483);
             panel1.Name = "panel1";
             panel1.Size = new Size(764, 28);
             panel1.TabIndex = 12;
@@ -185,7 +185,7 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lavender;
-            ClientSize = new Size(768, 510);
+            ClientSize = new Size(768, 513);
             Controls.Add(txtConsulta);
             Controls.Add(radioContenha);
             Controls.Add(radioInicia);
