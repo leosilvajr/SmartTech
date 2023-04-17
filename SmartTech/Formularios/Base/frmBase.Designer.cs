@@ -129,7 +129,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lavender;
+            BackColor = Color.LightGray;
             ClientSize = new Size(800, 510);
             Controls.Add(pnlBaixo);
             Controls.Add(pnlDireito);

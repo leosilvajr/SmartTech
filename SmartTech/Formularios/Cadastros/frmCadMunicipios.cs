@@ -44,7 +44,7 @@ namespace SmartTech.Formularios.Cadastros
 
                 dao.Atualizar(municipioExistente);
 
-                MessageBox.Show("Município atualizado com sucesso!");
+                Mensagem.MostraAviso("Município atualizado com sucesso.");
                 MontaTela();
 
             }
@@ -57,7 +57,7 @@ namespace SmartTech.Formularios.Cadastros
 
                 dao.Inserir(novoMunicipio);
 
-                MessageBox.Show("Município salvo com sucesso!");
+                Mensagem.MostraAviso("Município cadastrado com sucesso.");
                 MontaTela();
             }
         }

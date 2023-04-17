@@ -16,6 +16,8 @@ namespace SmartTech_Funcoes.Entidades
         public string IeRg { get; set; }
         public string ApelidoFantasia { get; set; }
         public int CodMunicipio { get; set; }
+        public string NomeMunicipio { get; set; }
+        public string Estado { get; set; }
         public string Endereco { get; set; }
         public string Cep { get; set; }
         public string Numero { get; set; }

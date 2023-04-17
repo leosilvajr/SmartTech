@@ -3,6 +3,7 @@ using SmartTech.Formularios.Consultas;
 using SmartTech_Funcoes;
 using SmartTech_Funcoes.DAO;
 using SmartTech_Funcoes.Entidades;
+using System.Windows.Forms;
 
 namespace SmartTech.Formularios.Cadastros
 {
@@ -10,6 +11,8 @@ namespace SmartTech.Formularios.Cadastros
     {
         Cliente cliente;
         public Util.DelegateRetornoConsulta<Cliente> SetRetornoConsultaCallback;
+        Municipio municipio;
+        public Util.DelegateRetornoConsulta<Municipio> SetRetornoConsultaCallbackMunicipio;
         public frmCadClientes()
         {
             InitializeComponent();
@@ -89,6 +92,66 @@ namespace SmartTech.Formularios.Cadastros
                 MessageBox.Show("Cliente salvo com sucesso!");
                 MontaTela();
             }
+        }
+
+        private void RetornoConsultaCallbackFnM(Cliente entidade)
+        {
+            try
+            {
+                txtCodigo.Text = entidade.Codigo.ToString();
+                txtNome.Text = entidade.NomeRazaoSocial;
+                mskCpfCnpj.Text = entidade.CpfCnpj;
+                txtApelidoFantasia.Text = entidade.ApelidoFantasia;
+                txtCodMunicipio.Text = entidade.CodMunicipio.ToString();
+                lblMunicipio.Text = entidade.NomeMunicipio;
+                lblUf.Text = entidade.Estado;
+                txtEndereco.Text = entidade.Endereco;
+                txtNumero.Text = entidade.Numero;
+                txtBairro.Text = entidade.Bairro;
+                mkbTelefone.Text = entidade.Telefone;
+                mkbCelular.Text = entidade.Celular;
+                txtEmail.Text = entidade.Email;
+                cboPessoa.Text = entidade.Pessoa;
+                mkbCep.Text = entidade.Cep;
+
+            }
+            catch (Exception ex)
+            {
+
+                Mensagem.MostraErro(ex.Message);
+            }
+        }
+
+        private void RetornoConsultaCallbackFnMunicipio(Municipio entidade)
+        {
+            try
+            {
+                txtCodMunicipio.Text = entidade.Codigo.ToString();
+                lblMunicipio.Text = entidade.Nome;
+                lblUf.Text = entidade.Estado;
+
+            }
+            catch (Exception ex)
+            {
+
+                Mensagem.MostraErro(ex.Message);
+            }
+        }
+        private void txtCodMunicipio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F3)
+            {
+                frmConsultaMunicipio consultaMunicipio = new frmConsultaMunicipio();
+                consultaMunicipio.SetRetornoConsultaCallback = new Util.DelegateRetornoConsulta<Municipio>(RetornoConsultaCallbackFnMunicipio);
+                Util.AbreForm(this, consultaMunicipio);
+            }
+        }
+
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            frmConsultaClientes consulta = new frmConsultaClientes();
+            consulta.SetRetornoConsultaCallback = new Util.DelegateRetornoConsulta<Cliente>(RetornoConsultaCallbackFnM);
+            Util.AbreForm(this, consulta);
         }
     }
 }

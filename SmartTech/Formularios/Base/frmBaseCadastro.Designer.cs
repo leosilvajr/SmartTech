@@ -69,7 +69,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.LightSteelBlue;
+            panel1.BackColor = Color.DarkGray;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnProcurar);
             panel1.Controls.Add(btnExcluir);
@@ -110,6 +110,7 @@
             btnExcluir.Tag = "Excluir Registro";
             toolTip1.SetToolTip(btnExcluir, "Excluir Registro");
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnEditar
             // 
@@ -173,7 +174,7 @@
             // 
             // pnlBase
             // 
-            pnlBase.BackColor = Color.Lavender;
+            pnlBase.BackColor = Color.LightGray;
             pnlBase.Dock = DockStyle.Fill;
             pnlBase.Location = new Point(2, 101);
             pnlBase.Name = "pnlBase";

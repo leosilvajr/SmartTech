@@ -130,20 +130,8 @@ namespace SmartTech_Funcoes.DAO
                         cliente.Telefone = reader.GetString(reader.GetOrdinal("TELEFONE"));
                         cliente.Celular = reader.GetString(reader.GetOrdinal("CELULAR"));
                         cliente.Email = reader.GetString(reader.GetOrdinal("EMAIL"));
-
-                        //if (!reader.IsDBNull(reader.GetOrdinal("Foto")))
-                        //{
-                        //    byte[] fotoBytes = (byte[])reader["Foto"];
-                        //    MemoryStream stream = new MemoryStream(fotoBytes);
-                        //    Image foto = Image.FromStream(stream);
-                        //    cliente.Foto = fotoBytes;
-                        //    //ou
-                        //    //ImageConverter converter = new ImageConverter();
-                        //    //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
-                        //}
                         cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
                         cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
-
 
                         clientes.Add(cliente);
                     }
@@ -179,17 +167,6 @@ namespace SmartTech_Funcoes.DAO
                         cliente.Telefone = reader.GetString(reader.GetOrdinal("TELEFONE"));
                         cliente.Celular = reader.GetString(reader.GetOrdinal("CELULAR"));
                         cliente.Email = reader.GetString(reader.GetOrdinal("EMAIL"));
-
-                        //if (!reader.IsDBNull(reader.GetOrdinal("Foto")))
-                        //{
-                        //    byte[] fotoBytes = (byte[])reader["Foto"];
-                        //    MemoryStream stream = new MemoryStream(fotoBytes);
-                        //    Image foto = Image.FromStream(stream);
-                        //    cliente.Foto = fotoBytes;
-                        //    //ou
-                        //    //ImageConverter converter = new ImageConverter();
-                        //    //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
-                        //}
                         cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
                         cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
                     }
@@ -225,17 +202,6 @@ namespace SmartTech_Funcoes.DAO
                         cliente.Telefone = reader.GetString(reader.GetOrdinal("TELEFONE"));
                         cliente.Celular = reader.GetString(reader.GetOrdinal("CELULAR"));
                         cliente.Email = reader.GetString(reader.GetOrdinal("EMAIL"));
-
-                        //if (!reader.IsDBNull(reader.GetOrdinal("Foto")))
-                        //{
-                        //    byte[] fotoBytes = (byte[])reader["Foto"];
-                        //    MemoryStream stream = new MemoryStream(fotoBytes);
-                        //    Image foto = Image.FromStream(stream);
-                        //    cliente.Foto = fotoBytes;
-                        //    //ou
-                        //    //ImageConverter converter = new ImageConverter();
-                        //    //cliente.Foto = (byte[])converter.ConvertTo(foto, typeof(byte[]));
-                        //}
                         cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
                         cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
                         clientes.Add(cliente);

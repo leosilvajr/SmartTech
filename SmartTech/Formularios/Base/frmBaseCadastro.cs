@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartTech_Funcoes.Componentes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,13 @@ namespace SmartTech.Formularios.Base
                 if (controle is TextBox)
                 {
                     ((TextBox)controle).Text = "";
+                }
+            }
+            foreach (Control controle in panel.Controls)
+            {
+                if (controle is MaskedTextBoxEdit)
+                {
+                    ((MaskedTextBoxEdit)controle).Text = "";
                 }
             }
         }
@@ -104,6 +112,11 @@ namespace SmartTech.Formularios.Base
         private void frmBaseCadastro_Load(object sender, EventArgs e)
         {
             btnAdicionar.Focus();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            MontaTela();
         }
     }
 }

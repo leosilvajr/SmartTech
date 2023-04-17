@@ -681,7 +681,7 @@
             // 
             // pnlBase
             // 
-            pnlBase.BackColor = Color.Lavender;
+            pnlBase.BackColor = Color.LightGray;
             pnlBase.Dock = DockStyle.Fill;
             pnlBase.Location = new Point(250, 34);
             pnlBase.Name = "pnlBase";
@@ -708,20 +708,20 @@
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(180, 22);
+            clientesToolStripMenuItem.Size = new Size(122, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Size = new Size(122, 22);
             produtosToolStripMenuItem.Text = "Produtos";
             // 
             // serviçosToolStripMenuItem
             // 
             serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            serviçosToolStripMenuItem.Size = new Size(180, 22);
+            serviçosToolStripMenuItem.Size = new Size(122, 22);
             serviçosToolStripMenuItem.Text = "Serviços";
             // 
             // frmPrincipal

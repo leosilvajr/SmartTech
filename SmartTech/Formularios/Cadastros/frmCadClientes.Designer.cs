@@ -76,6 +76,7 @@
             // btnProcurar
             // 
             btnProcurar.FlatAppearance.BorderSize = 0;
+            btnProcurar.Click += btnProcurar_Click;
             // 
             // btnExcluir
             // 
@@ -160,7 +161,7 @@
             txtNome.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtNome.Location = new Point(155, 84);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(547, 25);
+            txtNome.Size = new Size(678, 25);
             txtNome.TabIndex = 10;
             // 
             // txtCodigo
@@ -170,7 +171,7 @@
             txtCodigo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtCodigo.Location = new Point(156, 22);
             txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(121, 25);
+            txtCodigo.Size = new Size(62, 25);
             txtCodigo.TabIndex = 9;
             // 
             // label2
@@ -201,7 +202,7 @@
             mskCpfCnpj.Location = new Point(155, 147);
             mskCpfCnpj.Mask = "000,000,000-00";
             mskCpfCnpj.Name = "mskCpfCnpj";
-            mskCpfCnpj.Size = new Size(122, 25);
+            mskCpfCnpj.Size = new Size(135, 25);
             mskCpfCnpj.TabIndex = 12;
             // 
             // label3
@@ -218,7 +219,7 @@
             // 
             txtRgIe.BorderStyle = BorderStyle.FixedSingle;
             txtRgIe.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRgIe.Location = new Point(566, 147);
+            txtRgIe.Location = new Point(422, 147);
             txtRgIe.Name = "txtRgIe";
             txtRgIe.Size = new Size(136, 25);
             txtRgIe.TabIndex = 15;
@@ -227,7 +228,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(433, 152);
+            label4.Location = new Point(296, 152);
             label4.Name = "label4";
             label4.Size = new Size(127, 17);
             label4.TabIndex = 14;
@@ -239,7 +240,7 @@
             txtApelidoFantasia.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtApelidoFantasia.Location = new Point(156, 116);
             txtApelidoFantasia.Name = "txtApelidoFantasia";
-            txtApelidoFantasia.Size = new Size(546, 25);
+            txtApelidoFantasia.Size = new Size(677, 25);
             txtApelidoFantasia.TabIndex = 17;
             // 
             // label5
@@ -281,8 +282,9 @@
             txtCodMunicipio.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             txtCodMunicipio.Location = new Point(155, 178);
             txtCodMunicipio.Name = "txtCodMunicipio";
-            txtCodMunicipio.Size = new Size(122, 25);
+            txtCodMunicipio.Size = new Size(63, 25);
             txtCodMunicipio.TabIndex = 21;
+            txtCodMunicipio.KeyDown += txtCodMunicipio_KeyDown;
             // 
             // label7
             // 
@@ -298,7 +300,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(313, 182);
+            label8.Location = new Point(224, 182);
             label8.Name = "label8";
             label8.Size = new Size(54, 17);
             label8.TabIndex = 22;
@@ -318,7 +320,7 @@
             // 
             lblMunicipio.AutoSize = true;
             lblMunicipio.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMunicipio.Location = new Point(373, 182);
+            lblMunicipio.Location = new Point(284, 182);
             lblMunicipio.Name = "lblMunicipio";
             lblMunicipio.Size = new Size(123, 17);
             lblMunicipio.TabIndex = 24;
@@ -409,7 +411,7 @@
             mkbCelular.Location = new Point(155, 271);
             mkbCelular.Mask = "(00) 00000-0000";
             mkbCelular.Name = "mkbCelular";
-            mkbCelular.Size = new Size(99, 25);
+            mkbCelular.Size = new Size(110, 25);
             mkbCelular.TabIndex = 32;
             // 
             // label16

@@ -184,7 +184,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lavender;
+            BackColor = Color.LightGray;
             ClientSize = new Size(768, 513);
             Controls.Add(txtConsulta);
             Controls.Add(radioContenha);

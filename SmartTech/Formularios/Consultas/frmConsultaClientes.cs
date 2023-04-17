@@ -3,7 +3,6 @@ using SmartTech_Funcoes;
 using SmartTech_Funcoes.DAO;
 using SmartTech_Funcoes.Entidades;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,28 +14,26 @@ using System.Windows.Forms;
 
 namespace SmartTech.Formularios.Consultas
 {
-    public partial class frmConsultaMunicipio : frmBaseConsulta
+    public partial class frmConsultaClientes : frmBaseConsulta
     {
-        public Util.DelegateRetornoConsulta<Municipio> SetRetornoConsultaCallback;
-        private IList<Municipio> lista;
-        public frmConsultaMunicipio()
+        public Util.DelegateRetornoConsulta<Cliente> SetRetornoConsultaCallback;
+        private IList<Cliente> lista;
+        public frmConsultaClientes()
         {
             InitializeComponent();
-            lblTituloFormulario.Text = "Consulta Município";
+            lblTituloFormulario.Text = "Consulta Cliente";
         }
-
-        private void RetornoConsulta(Municipio entidade)
+        private void RetornoConsulta(Cliente entidade)
         {
             SetRetornoConsultaCallback(entidade);
         }
-
 
         public override bool Func_PegaRegistroSelecionado()
         {
             try
             {
 
-                Municipio ent = new Municipio();
+                Cliente ent = new Cliente();
                 int? codigo = dgvConsulta.CurrentRow.Cells["Codigo"].Value.ToString().GetToIntExt();
                 ent = lista.Where(m => m.Codigo == codigo).FirstOrDefault();
 
@@ -46,11 +43,10 @@ namespace SmartTech.Formularios.Consultas
             catch (Exception ex)
             {
 
-                Mensagem.MostraErro("Erro");
+                Mensagem.MostraErro("Erro ao consultar cliente.");
                 return false;
             }
         }
-
         public override bool Func_TextChanged()
         {
             string textoConsulta = txtConsulta.Text.Trim().ToLower();
@@ -61,14 +57,15 @@ namespace SmartTech.Formularios.Consultas
             }
             else
             {
-                dgvConsulta.DataSource = lista.Where(m => m.Nome.ToLower().Contains(textoConsulta)).ToList();
+                dgvConsulta.DataSource = lista.Where(m => m.NomeRazaoSocial.ToLower().Contains(textoConsulta)).ToList();
             }
             return base.Func_TextChanged();
         }
-        private void frmConsultaMunicipio_Load(object sender, EventArgs e)
+
+        private void frmConsultaClientes_Load(object sender, EventArgs e)
         {
             // Crie uma instância da classe MunicipioDAO
-            MunicipioDAO dao = new MunicipioDAO();
+            ClienteDAO dao = new ClienteDAO();
 
             // Obtenha uma lista de todos os municípios
             lista = dao.ObterTodos();
@@ -79,11 +76,10 @@ namespace SmartTech.Formularios.Consultas
             dgvConsulta.DataSource = lista;
 
             // Defina as colunas do DataGridView para exibir as propriedades Nome e Estado da classe Municipio
-            dgvConsulta.Columns["Codigo"].HeaderText = "Codigo";
-            dgvConsulta.Columns["Nome"].HeaderText = "Nome do Município";
-            dgvConsulta.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            dgvConsulta.Columns["Estado"].HeaderText = "Estado";
+            //dgvConsulta.Columns["Codigo"].HeaderText = "Codigo";
+            //dgvConsulta.Columns["Nome"].HeaderText = "Nome do Município";
+            //dgvConsulta.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dgvConsulta.Columns["Estado"].HeaderText = "Estado";
 
 
         }
