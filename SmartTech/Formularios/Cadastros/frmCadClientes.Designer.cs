@@ -320,7 +320,7 @@
             // 
             lblMunicipio.AutoSize = true;
             lblMunicipio.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMunicipio.Location = new Point(284, 182);
+            lblMunicipio.Location = new Point(284, 181);
             lblMunicipio.Name = "lblMunicipio";
             lblMunicipio.Size = new Size(123, 17);
             lblMunicipio.TabIndex = 24;
@@ -330,7 +330,7 @@
             // 
             lblUf.AutoSize = true;
             lblUf.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblUf.Location = new Point(740, 182);
+            lblUf.Location = new Point(740, 181);
             lblUf.Name = "lblUf";
             lblUf.Size = new Size(93, 17);
             lblUf.TabIndex = 25;

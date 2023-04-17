@@ -75,13 +75,6 @@ namespace SmartTech.Formularios.Consultas
             // Atribua a lista de municípios ao DataSource do DataGridView
             dgvConsulta.DataSource = lista;
 
-            // Defina as colunas do DataGridView para exibir as propriedades Nome e Estado da classe Municipio
-            //dgvConsulta.Columns["Codigo"].HeaderText = "Codigo";
-            //dgvConsulta.Columns["Nome"].HeaderText = "Nome do Município";
-            //dgvConsulta.Columns["Nome"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //dgvConsulta.Columns["Estado"].HeaderText = "Estado";
-
-
         }
     }
 }

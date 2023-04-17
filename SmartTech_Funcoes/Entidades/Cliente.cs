@@ -25,6 +25,7 @@ namespace SmartTech_Funcoes.Entidades
         public string Telefone { get; set; }
         public string Celular { get; set; }
         public string Email { get; set; }
+        public Municipio Municipio { get; set; }
     }
 
 }

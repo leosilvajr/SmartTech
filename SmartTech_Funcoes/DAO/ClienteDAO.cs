@@ -60,17 +60,6 @@ namespace SmartTech_Funcoes.DAO
                 cmd.Parameters.AddWithValue("@Telefone", cliente.Telefone);
                 cmd.Parameters.AddWithValue("@Celular", cliente.Celular);
                 cmd.Parameters.AddWithValue("@Email", cliente.Email);
-                //if (cliente.Foto != null)
-                //{
-                //    SqlParameter fotoParam = new SqlParameter("@Foto", SqlDbType.VarBinary, cliente.Foto.Length);
-                //    fotoParam.Value = new SqlBinary(cliente.Foto);
-                //    cmd.Parameters.Add(fotoParam);
-                //}
-                //else
-                //{
-                //    cmd.Parameters.AddWithValue("@Foto", DBNull.Value);
-                //}
-
                 cmd.Parameters.AddWithValue("@Cep", cliente.Cep);
                 cmd.Parameters.AddWithValue("@Pessoa", cliente.Pessoa);
                 cmd.Parameters.AddWithValue("@Codigo", cliente.Codigo);
@@ -112,29 +101,33 @@ namespace SmartTech_Funcoes.DAO
 
             using (SqlConnection conn = Conexao.ObterConexao())
             using (SqlCommand cmd = new SqlCommand("SELECT * FROM CLIENTE", conn))
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                while (reader.Read())
                 {
-                    while (reader.Read())
+                    Cliente cliente = new Cliente();
+                    cliente.Codigo = (int)reader["COD_CLIENTE"];
+                    cliente.NomeRazaoSocial = reader["NOME_RAZAOSOCIAL"].ToString();
+                    cliente.CpfCnpj = reader["CPF_CNPJ"].ToString();
+                    cliente.IeRg = reader["IE_RG"].ToString();
+                    cliente.ApelidoFantasia = reader["APELIDO_FANTASIA"].ToString();
+                    cliente.CodMunicipio = (int)reader["COD_MUNICIPIO"];
+                    cliente.Endereco = reader["ENDERECO"].ToString();
+                    cliente.Numero = reader["NUMERO"].ToString();
+                    cliente.Bairro = reader["BAIRRO"].ToString();
+                    cliente.Telefone = reader["TELEFONE"].ToString();
+                    cliente.Celular = reader["CELULAR"].ToString();
+                    cliente.Email = reader["EMAIL"].ToString();
+                    cliente.Pessoa = reader["PESSOA"].ToString();
+                    cliente.Cep = reader["CEP"].ToString();
+                    if (cliente.CodMunicipio > 0)
                     {
-                        Cliente cliente = new Cliente();
-                        cliente.Codigo = reader.GetInt32(reader.GetOrdinal("COD_CLIENTE"));
-                        cliente.NomeRazaoSocial = reader.GetString(reader.GetOrdinal("NOME_RAZAOSOCIAL"));
-                        cliente.CpfCnpj = reader.GetString(reader.GetOrdinal("CPF_CNPJ"));
-                        cliente.IeRg = reader.GetString(reader.GetOrdinal("IE_RG"));
-                        cliente.ApelidoFantasia = reader.GetString(reader.GetOrdinal("APELIDO_FANTASIA"));
-                        cliente.CodMunicipio = reader.GetInt32(reader.GetOrdinal("COD_MUNICIPIO"));
-                        cliente.Endereco = reader.GetString(reader.GetOrdinal("ENDERECO"));
-                        cliente.Numero = reader.GetString(reader.GetOrdinal("NUMERO"));
-                        cliente.Bairro = reader.GetString(reader.GetOrdinal("BAIRRO"));
-                        cliente.Telefone = reader.GetString(reader.GetOrdinal("TELEFONE"));
-                        cliente.Celular = reader.GetString(reader.GetOrdinal("CELULAR"));
-                        cliente.Email = reader.GetString(reader.GetOrdinal("EMAIL"));
-                        cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
-                        cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
-
-                        clientes.Add(cliente);
+                        MunicipioDAO municipio = new MunicipioDAO();
+                        cliente.Municipio = municipio.ObterPorCodigo(cliente.CodMunicipio);
                     }
+
+
+                    clientes.Add(cliente);
                 }
             }
 
@@ -143,8 +136,6 @@ namespace SmartTech_Funcoes.DAO
 
         public Cliente ObterPorCodigo(int codigo)
         {
-            Cliente cliente = null;
-
             using (SqlConnection conn = Conexao.ObterConexao())
             using (SqlCommand cmd = new SqlCommand("SELECT * FROM CLIENTE WHERE COD_CLIENTE = @Codigo", conn))
             {
@@ -154,26 +145,32 @@ namespace SmartTech_Funcoes.DAO
                 {
                     if (reader.Read())
                     {
-                        cliente = new Cliente();
-                        cliente.Codigo = reader.GetInt32(reader.GetOrdinal("COD_CLIENTE"));
-                        cliente.NomeRazaoSocial = reader.GetString(reader.GetOrdinal("NOME_RAZAOSOCIAL"));
-                        cliente.CpfCnpj = reader.GetString(reader.GetOrdinal("CPF_CNPJ"));
-                        cliente.IeRg = reader.GetString(reader.GetOrdinal("IE_RG"));
-                        cliente.ApelidoFantasia = reader.GetString(reader.GetOrdinal("APELIDO_FANTASIA"));
-                        cliente.CodMunicipio = reader.GetInt32(reader.GetOrdinal("COD_MUNICIPIO"));
-                        cliente.Endereco = reader.GetString(reader.GetOrdinal("ENDERECO"));
-                        cliente.Numero = reader.GetString(reader.GetOrdinal("NUMERO"));
-                        cliente.Bairro = reader.GetString(reader.GetOrdinal("BAIRRO"));
-                        cliente.Telefone = reader.GetString(reader.GetOrdinal("TELEFONE"));
-                        cliente.Celular = reader.GetString(reader.GetOrdinal("CELULAR"));
-                        cliente.Email = reader.GetString(reader.GetOrdinal("EMAIL"));
-                        cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
-                        cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
+                        Cliente cliente = new Cliente();
+                        cliente.Codigo = (int)reader["COD_CLIENTE"];
+                        cliente.NomeRazaoSocial = reader["NOME_RAZAOSOCIAL"].ToString();
+                        cliente.CpfCnpj = reader["CPF_CNPJ"].ToString();
+                        cliente.IeRg = reader["IE_RG"].ToString();
+                        cliente.ApelidoFantasia = reader["APELIDO_FANTASIA"].ToString();
+                        cliente.CodMunicipio = (int)reader["COD_MUNICIPIO"];
+                        cliente.Endereco = reader["ENDERECO"].ToString();
+                        cliente.Numero = reader["NUMERO"].ToString();
+                        cliente.Bairro = reader["BAIRRO"].ToString();
+                        cliente.Telefone = reader["TELEFONE"].ToString();
+                        cliente.Celular = reader["CELULAR"].ToString();
+                        cliente.Email = reader["EMAIL"].ToString();
+                        cliente.Pessoa = reader["PESSOA"].ToString();
+                        cliente.Cep = reader["CEP"].ToString();
+                        if (cliente.CodMunicipio > 0)
+                        {
+                            MunicipioDAO municipio = new MunicipioDAO();
+                            cliente.Municipio = municipio.ObterPorCodigo(cliente.CodMunicipio);
+                        }
+                        return cliente;
                     }
                 }
             }
 
-            return cliente;
+            return null;
         }
 
         public List<Cliente> ObterPorNome(string nome)
@@ -190,20 +187,20 @@ namespace SmartTech_Funcoes.DAO
                     while (reader.Read())
                     {
                         Cliente cliente = new Cliente();
-                        cliente.Codigo = reader.GetInt32(reader.GetOrdinal("COD_CLIENTE"));
-                        cliente.NomeRazaoSocial = reader.GetString(reader.GetOrdinal("NOME_RAZAOSOCIAL"));
-                        cliente.CpfCnpj = reader.GetString(reader.GetOrdinal("CPF_CNPJ"));
-                        cliente.IeRg = reader.GetString(reader.GetOrdinal("IE_RG"));
-                        cliente.ApelidoFantasia = reader.GetString(reader.GetOrdinal("APELIDO_FANTASIA"));
-                        cliente.CodMunicipio = reader.GetInt32(reader.GetOrdinal("COD_MUNICIPIO"));
-                        cliente.Endereco = reader.GetString(reader.GetOrdinal("ENDERECO"));
-                        cliente.Numero = reader.GetString(reader.GetOrdinal("NUMERO"));
-                        cliente.Bairro = reader.GetString(reader.GetOrdinal("BAIRRO"));
-                        cliente.Telefone = reader.GetString(reader.GetOrdinal("TELEFONE"));
-                        cliente.Celular = reader.GetString(reader.GetOrdinal("CELULAR"));
-                        cliente.Email = reader.GetString(reader.GetOrdinal("EMAIL"));
-                        cliente.Pessoa = reader.GetString(reader.GetOrdinal("PESSOA"));
-                        cliente.Cep = reader.GetString(reader.GetOrdinal("CEP"));
+                        cliente.Codigo = (int)reader["COD_CLIENTE"];
+                        cliente.NomeRazaoSocial = reader["NOME_RAZAOSOCIAL"].ToString();
+                        cliente.CpfCnpj = reader["CPF_CNPJ"].ToString();
+                        cliente.IeRg = reader["IE_RG"].ToString();
+                        cliente.ApelidoFantasia = reader["APELIDO_FANTASIA"].ToString();
+                        cliente.CodMunicipio = (int)reader["COD_MUNICIPIO"];
+                        cliente.Endereco = reader["ENDERECO"].ToString();
+                        cliente.Numero = reader["NUMERO"].ToString();
+                        cliente.Bairro = reader["BAIRRO"].ToString();
+                        cliente.Telefone = reader["TELEFONE"].ToString();
+                        cliente.Celular = reader["CELULAR"].ToString();
+                        cliente.Email = reader["EMAIL"].ToString();
+                        cliente.Pessoa = reader["PESSOA"].ToString();
+                        cliente.Cep = reader["CEP"].ToString();
                         clientes.Add(cliente);
                     }
                 }

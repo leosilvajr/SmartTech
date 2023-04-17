@@ -74,7 +74,7 @@ namespace SmartTech.Formularios.Cadastros
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro");
+                Mensagem.MostraErro(ex.Message);
             }
         }
         private void btnProcurar_Click(object sender, EventArgs e)

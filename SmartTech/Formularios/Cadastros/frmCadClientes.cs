@@ -64,7 +64,7 @@ namespace SmartTech.Formularios.Cadastros
                 clienteExistente.Email = txtEmail.Text;
                 dao.Atualizar(clienteExistente);
 
-                MessageBox.Show("Cliente atualizado com sucesso!");
+                Mensagem.MostraAviso("Cliente atualizado com sucesso!");
                 MontaTela();
 
             }
@@ -89,15 +89,16 @@ namespace SmartTech.Formularios.Cadastros
 
                 dao.Inserir(clienteNovo);
 
-                MessageBox.Show("Cliente salvo com sucesso!");
+                Mensagem.MostraAviso("Cliente salvo com sucesso!");
                 MontaTela();
             }
         }
 
-        private void RetornoConsultaCallbackFnM(Cliente entidade)
+        private void RetornoConsultaCallbackFn(Cliente entidade)
         {
             try
             {
+                cliente = entidade;
                 txtCodigo.Text = entidade.Codigo.ToString();
                 txtNome.Text = entidade.NomeRazaoSocial;
                 mskCpfCnpj.Text = entidade.CpfCnpj;
@@ -113,6 +114,8 @@ namespace SmartTech.Formularios.Cadastros
                 txtEmail.Text = entidade.Email;
                 cboPessoa.Text = entidade.Pessoa;
                 mkbCep.Text = entidade.Cep;
+                lblMunicipio.Text = entidade.Municipio.Nome;
+                lblUf.Text = entidade.Municipio.Estado;
 
             }
             catch (Exception ex)
@@ -150,7 +153,7 @@ namespace SmartTech.Formularios.Cadastros
         private void btnProcurar_Click(object sender, EventArgs e)
         {
             frmConsultaClientes consulta = new frmConsultaClientes();
-            consulta.SetRetornoConsultaCallback = new Util.DelegateRetornoConsulta<Cliente>(RetornoConsultaCallbackFnM);
+            consulta.SetRetornoConsultaCallback = new Util.DelegateRetornoConsulta<Cliente>(RetornoConsultaCallbackFn);
             Util.AbreForm(this, consulta);
         }
     }
